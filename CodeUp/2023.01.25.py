@@ -1,3 +1,5 @@
+import sys
+
 # 10의 배수 간편하게 표현하기 : 유효숫자e지수 = 유효숫자*10^지수
 # print(f"1억은 {1e9}이다")
 
@@ -64,3 +66,47 @@ dictionary['키'] =160
 dictionary['몸무계'] =  45
 
 print(dictionary)
+
+# 키 데이터만 뽑아 활용
+print(dictionary.keys())
+# 값 데이터만 뽑아 활용
+print(dictionary.values())
+
+# 집합 자료형의 연산 (집합은 중복을 허용하지 않고, 순서가 없다는 특집이 있다.)
+a = set([1,2,3,4,5])
+b = set([3,4,5,6,7])
+
+# 합집합
+print(a| b)
+# 교집합
+print(a&b)
+# 차집합
+print(b-a)
+
+# in / not in 연산자
+a = [3, 9, 1, 16, 5, 4, 9, 7, 0, 9]
+
+if 3 in a : 
+  print("리스트 안에 3이 들어가 있을 때 참")
+
+if 100 not in a : 
+  print("리스트 안에 100이 안 들어가 있을 때 참")
+
+# 조건부 표현식 
+score = 95
+
+result = "pass" if score>70 else "Non pass"
+print(f"바다는 {score}점이기 때문에 통과이다")
+
+# 파이썬에서 입력 
+
+# 데이터의 개수 입력
+n = int(input())
+#각 데이터를 공백으로 구분하여 입력
+data = list(map(int,input().split()))
+print(data)
+
+# 한 줄씩 입력받기
+print("한 줄씩 입력하시오")
+data = sys.stdin.readline().rsplit()
+print(data)
