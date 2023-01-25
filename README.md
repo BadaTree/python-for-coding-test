@@ -1,9 +1,9 @@
 
-## **Daily Study Report **
+## **Daily Study Report**
 
 ***
 
-* Goal : *
+*Goal :*
 
 ####1. 매일 꾸준하게 2개씩 코딩 문제 풀기(정말 간단한거라도 부담된다면 한 문제라도)
 
@@ -11,7 +11,7 @@
 
 ***
 
-### * ID/Password : *
+### *ID/Password :*
 
 ####1. Code Up: zzzxxx3166/qkekdla00^^
 
