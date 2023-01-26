@@ -19,12 +19,3 @@
 #### 추천 언어 : C++,파이썬
 ***
 
-### *ID/Password :*
-
-#### 1. Code Up: zzzxxx3166/qkekdla00^^
-
-#### 2. Back june: zzzxxx3166/qkekdla00^^
-
-#### 3. programas: zzzxxx3166@naver.com/qkekdla00^^
-
-#### 4. HackerRank: 깃허브 로그인: (bada9829134@gmail.com)
