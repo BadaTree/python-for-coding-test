@@ -47,9 +47,43 @@ for i in range(1,num+1):
         print(i,end='')
 
 # Q.6088 시작 값(a), 등차(d), 몇 번째인지를 나타내는 정수(n)가 입력될 때, n번째 수를 출력하는 프로그램을 만들어보자.
+a,d,n = input().split()
+a = int(a)
+d = int(d)
+n = int(n)
+result = a + ((n-1)*d)
+print(result)
 
 # Q.6089 시작 값(a), 등비(r), 몇 번째인지를 나타내는 정수(n)가 입력될 때, n번째 수를 출력하는 프로그램을 만들어보자.
-
+a,d,n = input().split()
+a = int(a)
+d = int(d)
+n = int(n)
+result = a * ((n-1)**d)
+print(result)
 # Q.6090 시작 값(a), 곱할 값(m), 더할 값(d), 몇 번째인지를 나타내는 정수(n)가 입력될 때, n번째 수를 출력하는 프로그램을 만들어보자.
+a, m, d, n = input().split()
+a = int(a)
+d = int(d)
+n = int(n)
+m = int(m)
+
+i = 1
+before = a
+
+while i < n:
+    before = (before * m) + d
+    i += 1
+
+print(before)
 
 # Q.6091 3명이 다시 모두 함께 방문해 문제를 풀어보는 날(동시 가입/등업 후 며칠 후?)을 출력한다.
+a,b,c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+day = 1
+
+while day % a != 0 or day % b != 0 or day % c != 0:
+    day += 1
+print(day)
