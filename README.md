@@ -13,7 +13,7 @@
 ### *Plan :*
 #### 1. 프로그래밍 기본 문법 공부(파이썬)
 #### 2. 알고리즘 기본100제(코드업:기초100제) : 6096, 6097,6098 문제 어려워서 못 풀겠음,,
-#### 3. 이것이 코딩 테스트다 https://www.youtube.com/watch?v=Mf0pYO8VAZk&list=PLVsNizTWUw7H9_of5YCB0FmsSc-K44y81
+#### 3. [이것이 코딩 테스트다] (https://www.youtube.com/watch?v=Mf0pYO8VAZk&list=PLVsNizTWUw7H9_of5YCB0FmsSc-K44y81)
 #### 4. 백준 문제풀기(그리디, 탐색, 기초 동적프로그래밍 50문제씩)
 #### 5. 기출문제 풀기(프로그래머스:카카오)
 #### 코드포스 블루레벨 정도면 코딩테스트 합격 가능(또는 삼성 역량 테스트 B형)
