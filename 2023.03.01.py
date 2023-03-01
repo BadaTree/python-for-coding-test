@@ -19,3 +19,19 @@
 #     if word[i] != word[-(i+1)]:
 #         result = 0
 # print(result)
+
+num = int(input())
+count = 0
+for i in range(num):
+    word = input()
+    word = word[:]
+    error = 0
+    for j in range(len(word)):
+        for k in range(len(word)):
+            if word[j] == word[k] and j != k:
+                if k != j+1 and k != j-1:
+                    error += 1
+    if error == 0 :
+        count += 1
+
+print(count)
