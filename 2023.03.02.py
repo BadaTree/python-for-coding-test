@@ -1,4 +1,6 @@
-a,b = input().split()
+# 2738 런타임에러 수정하기 
+
+a,b = map(int, input().split())
 
 list_1 = [[0 for j in range(int(a))] for i in range(int(b))]
 list_2 = [[0 for j in range(int(a))] for i in range(int(b))]
