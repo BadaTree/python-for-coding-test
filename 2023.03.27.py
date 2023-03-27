@@ -22,6 +22,7 @@
 # @@ 10798번 세로 읽기
 in_put = [['0' for j in range(int(15))] for i in range(int(5))]
 max_len = 0
+
 for i in range(5):
     temp = input()
     if max_len < len(temp):
@@ -34,5 +35,5 @@ for j in range(max_len):
     for i in range(in_put):
        if i[j].isnan:
         i[j]
-    b =  [i[j] for i in in_put]
+    b = [i[j] for i in in_put]
     print(b)
