@@ -29,9 +29,15 @@
 
 ### *Python :*
 - [Python - Nomad Coders](https://bit.ly/3AOxZUS)
+
+### *Python :*
+- [Python - Nomad Coders](https://bit.ly/3AOxZUS)
 <br>
 
+# **Backend Lectures** 🍎
 
+### *DataBase :*
+- [Python - Nomad Coders](https://bit.ly/3AOxZUS)
 
 <br><br>
 
