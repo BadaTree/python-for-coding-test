@@ -20,12 +20,13 @@
 #### 추천 언어 : C++,파이썬
 ***
 
+<br><br>
 <!-- PR Description Example -->
 # **Language Lectures** 🍑 
-> JavaScript
+### * JavaScript :*
 - [JavaScript - Nomad Coders](https://bit.ly/3Kwvee8)
 
-> Python
+### *Python :*
 - [Python - Nomad Coders](https://bit.ly/3AOxZUS)
 <br>
 
