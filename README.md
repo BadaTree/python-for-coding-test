@@ -1,5 +1,5 @@
 
-## **Daily Study Report**
+## **Daily Study Report** 🍏 🍎 🍋
 
 ***
 
@@ -19,4 +19,19 @@
 #### 코드포스 블루레벨 정도면 코딩테스트 합격 가능(또는 삼성 역량 테스트 B형)
 #### 추천 언어 : C++,파이썬
 ***
+
+<!-- PR Description Example -->
+# **Language Lectures** 🍑 
+> JavaScript
+- [JavaScript - Nomad Coders](https://bit.ly/3Kwvee8)
+
+> Python
+- [Python - Nomad Coders](https://bit.ly/3AOxZUS)
+<br>
+
+
+
+<br><br>
+
+
 
