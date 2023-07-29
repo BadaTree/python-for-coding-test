@@ -37,8 +37,10 @@
 # **Backend Lectures** 🍎
 
 ### *DataBase :*
-- [Python - Nomad Coders](https://bit.ly/3AOxZUS)
-
+- [0. 쉬운코드 - DB 개념 및 실습](https://www.youtube.com/watch?v=aL0XXc1yGPs&list=PL4SJPVdQanQHJJaG4S_mMN4RK6RGEdJAn)
+- [1. 이수안 컴퓨터연구소 - DB 개요](https://www.youtube.com/watch?v=HmVAN1xq9KI&list=PL7ZVZgsnLwEEMDG02R-ThBc1cDTdT97z6)
+- [2. 김남규 교수 - DB 실무](https://www.youtube.com/watch?v=u0z_lNd3bjg&list=PL4SJPVdQanQHJJaG4S_mMN4RK6RGEdJAn&index=4)
+- [3. 시니어코딩 - DB 설계 및 실무](https://www.youtube.com/watch?v=GroeyzBNhfU&list=PL4SJPVdQanQHJJaG4S_mMN4RK6RGEdJAn&index=13)
 <br><br>
 
 
