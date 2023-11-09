@@ -41,6 +41,3 @@ result = [i for i in a if i != 22]
 print(f'22가 제거된 리스트 {result}')
 result = [i for i in a if i not in result_set]
 print(f'특정 리스트의 값을 모두 제거한 리스트  {result}')
-
-
-# TODO: 5강: 파이썬 문법 
