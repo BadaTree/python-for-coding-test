@@ -9,6 +9,10 @@
 ***
 # **Coding Test** 🍑 
 
+### *Commit Message 명명 규칙 :*
+- [간단히 규칙설명](https://velog.io/@chojs28/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EA%B7%9C%EC%B9%99)
+- [깃으로 협업 가이드 설명](https://www.freecodecamp.org/korean/news/writing-good-commit-messages-a-practical-guide/)
+
 ### *platform :*
 - [CodeUp](https://codeup.kr/problemsetsol.php)
 - [BackJun](https://www.acmicpc.net/)
