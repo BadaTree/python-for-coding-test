@@ -81,9 +81,8 @@
 #[ ] 재귀함수를 이용하여 최대공약수 계산 (유클리드 호제법) 예제
 def GCD(a,b):
     if a % b == 0 :
-        print("*****",b)
         return b
-    next_b = a % b 
-    return GCD(b, next_b)
+    else:
+        return GCD(b, a%b)
     
 print(GCD(192,162))
