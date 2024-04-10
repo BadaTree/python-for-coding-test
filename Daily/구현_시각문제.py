@@ -1,5 +1,7 @@
 #TODO: 시각: 
 
+#CHECKLIST: '3' in str(i)+str(j)+str(k)
+
 N =int(input())
 count = 0
 
@@ -23,5 +25,3 @@ for k in range(60):
         count1 += 1
     # print(count0,count1)
     
-if '17' in '67767bahanelda':
-    print('Right')

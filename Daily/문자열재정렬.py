@@ -4,7 +4,12 @@
 # 예: K1KA5A5CB7이라는 값이 들어오면 ABCKK13을 출력합니다.
 
 #CHECKLIST:
+#[x]: 알파벳인지 어떻게 확인하지?
+# x.isalpha()를 이용하여 간편하게 체크
+#[x]: 어떻게 리스트를 문자열로 변환하지?
+# 변수 = ''.join(alpa) *'-'를 넣으면 a-l-p-h-a
 
+#[ ] Code i wrote
 input = input()
 sum = 0
 alpa = []
@@ -24,4 +29,25 @@ alpa.sort()
 
 # 오름차순 정렬 문자열과 숫자 합 이어 붙이기
 string_alpa = ''.join(alpa)
+print(string_alpa+str(sum))
+
+#[ ]: Answer code
+input = input()
+sum = 0
+alpha = []
+
+# input 문자열에서 숫자만 제거하고, 합 계산하기
+for i in input:
+    if i.isalpha():
+        alpha.append(i)
+    else:
+        sum += int(i)
+
+# 알파벳만 남은 문자열 오름차순 정렬하기
+alpha.sort()
+
+# 오름차순 정렬 문자열과 숫자 합 이어 붙이기
+if sum != 0:
+    alpha.append(sum)
+string_alpa = ''.join(alpha)
 print(string_alpa+str(sum))
