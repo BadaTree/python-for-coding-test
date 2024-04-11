@@ -14,6 +14,7 @@ def dfs(graph, v, visited):
     # 현재 노드 방문 처리 
     visited[v] = True
     print(v,end= ' ')
+    
     # 현재 노드와 연결된 다른 노드를 재귀적으로 방문 
     for i in graph[v]:
         if not visited[i]:
@@ -27,15 +28,15 @@ graph = [[],
          [3,5],
          [3,4],
          [7],
-         [2,8],
+         [2,6,8],
          [1,7]]
 
 # 각 노드가 방문된 정보를 표현
 visited =[False]*9
 
 # 정의된 BFS 함수 호출
-dfs(graph,1,visited)
-
+dfs(graph,1,visited) #1->2->7->6->3->4->5
+print("")
 
 #[ ] BFS(Breadth-Firsh Search), 큐 자료 구조
 # BFS는 너비 우선 탐색이라고하며, 그래프에서 가까운 노드부터 우선적으로 탐색하는 알고리즘이다.
@@ -72,11 +73,66 @@ graph = [[],
          [3,5],
          [3,4],
          [7],
-         [2,8],
+         [2,6,8],
          [1,7]]
 
 # 각 노드가 방문된 정보를 표현
 visited =[False]*9
 
 # 정의된 BFS 함수 호출
-bfs(graph,1,visited)
+bfs(graph,1,visited) # 1->2->3->8 ->7->4 -> 5->6
+print("")
+
+# 각 노드가 연결된 정보 표현 
+def DFS(graph,v,visited):
+    # 현재 노드 방문 처리 
+    visited[v] = True
+    print(v,end= ' ')
+    
+    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문 
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph,i ,visited)
+            
+            
+def dfs(graph, v, visited):
+    # 현재 노드 방문 처리 
+    visited[v] = True
+    print(v,end= ' ')
+    
+    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문 
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph,i ,visited)
+from collections import deque
+
+def BFS(graph,start,visited):
+    queue = deque([start])
+    visited[start] = True
+    
+    while queue:
+        v = queue.popleft()
+        print(v,end=' ')
+        for i in graph[v] :
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True 
+
+
+
+graph = [[],
+         [2,3,8],
+         [1,7],
+         [1,4,5],
+         [3,5],
+         [3,4],
+         [7],
+         [2,6,8],
+         [1,7]]
+
+
+visited = [False]*9
+
+BFS(graph,1,visited)
+print("")
+DFS(graph,1,visited)
