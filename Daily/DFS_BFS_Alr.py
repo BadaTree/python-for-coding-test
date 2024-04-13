@@ -85,25 +85,14 @@ print("")
 
 # 각 노드가 연결된 정보 표현 
 def DFS(graph,v,visited):
-    # 현재 노드 방문 처리 
     visited[v] = True
-    print(v,end= ' ')
+    print(v,end=' ')
     
-    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문 
     for i in graph[v]:
         if not visited[i]:
-            dfs(graph,i ,visited)
+            DFS(graph, i, visited)
             
             
-def dfs(graph, v, visited):
-    # 현재 노드 방문 처리 
-    visited[v] = True
-    print(v,end= ' ')
-    
-    # 현재 노드와 연결된 다른 노드를 재귀적으로 방문 
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph,i ,visited)
 from collections import deque
 
 def BFS(graph,start,visited):
