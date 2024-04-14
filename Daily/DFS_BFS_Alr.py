@@ -122,6 +122,6 @@ graph = [[],
 
 visited = [False]*9
 
-BFS(graph,1,visited)
+# BFS(graph,1,visited)
 print("")
 DFS(graph,1,visited)
