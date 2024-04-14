@@ -1,14 +1,11 @@
-# TODO: 가장 큰 수 
+# TODO: Programmers 가장 큰 수 
 
-def solution(citations):
-    answer = 0
-    citations.sort()
+def solution(numbers):
+    numbers = list(map(str,numbers))
+    numbers.sort(key= lambda x : x*3, reverse=True)
     
-    for i in range(1, len(citations)+1):
-        min_num = citations[-i]
-        if min_num >= i:
-            answer = i
-    
+    answer = str(int(''.join(numbers)))
     return answer
 
-solution([3, 0, 4, 4, 4, 5])
+answer= solution([3,30,34,5,9])
+print(answer)

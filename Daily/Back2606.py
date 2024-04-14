@@ -10,7 +10,7 @@ def dfs(start):
     for i in graph[v]:
         if not visited[i]:
             dfs(i)
-    return count
+    return count-1
 
 
 N = int(input())
