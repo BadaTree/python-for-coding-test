@@ -26,7 +26,7 @@ T = int(input())
 for i in range(T):
     t = int(input())
     values = list(map(int,input().split(' ')))
-    print(values)
+ 
     max_val = max(values)
     min_val = min(values)
     print(f"#{i+1} {max_val-min_val}")
