@@ -29,6 +29,6 @@ for i in range(1,T+1):
         cards[j] += 1
     
     max_num = max(cards)
-    print(enumerate(cards))
+    
     max_index = max(i for i, v in enumerate(cards) if v == max_num) 
     print(f"#{i} {max_index} {max_num} ")
