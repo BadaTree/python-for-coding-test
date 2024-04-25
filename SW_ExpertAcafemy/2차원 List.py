@@ -71,5 +71,5 @@ num = [1,2,3,4]
 # [ ] 두 개의 자료형 묶어주는 함수
 print(list(zip(alpha,num)))
 
-# [ ] 전치행렬 
+#[ ] 전치행렬 
 print(list(zip(*arr)))
