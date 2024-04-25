@@ -14,4 +14,4 @@ for i in range(1,T+1):
 
     result = sum(num_list[-M:]) - sum(num_list[0:M])
 
-    print(f"#{T} {result}") 
+    print(f"#{i} {result}") 
