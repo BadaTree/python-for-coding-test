@@ -30,3 +30,21 @@ N개의 정수가 주어지면 가장 큰 수, 가장 작은 수, 2번째 큰 �
 
 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 특별히 정렬된 숫자를 10개까지 출력한다.
 '''
+
+case = int(input())
+
+for i in range(1,case+1):
+    n = int(input())
+    result = []
+    numList = list(map(int,input().split(' ')))
+    
+    for j in range(n):
+        if j % 2 == 0 : # 홀수번 인덱스에는 가장 큰 수 
+            max_num = max(numList) # 리스트의 가장 큰 수 찾기
+            result.append(max_num) # 결과 리스트에 추가
+            numList.remove(max_num) # 정렬한 값은 리스트에서 삭제 
+        else: 
+            min_num = min(numList) # 리스트의 가장 큰 수 찾기
+            result.append(min_num) # 결과 리스트에 추가
+            numList.remove(min_num) # 정렬한 값은 리스트에서 삭제
+    print(f"#{i} {' '.join(map(str,result))}")
