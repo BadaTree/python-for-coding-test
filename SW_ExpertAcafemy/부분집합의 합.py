@@ -18,4 +18,3 @@ for c in range(case_N):
             count += 1
     print(f"#{c + 1} {count}")
     
-print(sum(arr))
