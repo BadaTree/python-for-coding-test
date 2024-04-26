@@ -43,7 +43,6 @@ for i in range(1,N+1): # case마다 연산 시작
 
     for j in range(rect): # 각 사각형마다 지정 color(수)로 채운다.
         r1,c1,r2,c2,color = list(map(int, input().split(' ')))
-        print(area)
         for r in range(r1,r2+1):
             for c in range(c1,c2+1):
                 if area[r][c] != 0 : # 두 번 칠해지는 영역인지 확인 후 보라색(-1)으로 표시
