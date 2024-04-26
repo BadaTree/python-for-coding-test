@@ -30,7 +30,6 @@ def Search(arr,key, start,end):
         return False
     else:
         middle = (start + end) //2
-        print("hii", arr[middle],arr)
         if arr[middle] == key : # 검색 성공
             print(middle,"성공")
             return True
@@ -50,3 +49,5 @@ start = 0
 end = len(arr)-1 #인덱스는 0부터 시작하므로 최대 인덱스는 -1
 result = Search(arr,key, start,end)
 print(result)
+
+#[ ] 인덱스 
