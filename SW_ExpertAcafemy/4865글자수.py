@@ -20,21 +20,30 @@
 
 '''
 
-def check(index,str1,str2):
-    str1 = list(set(str1)) # str1의 중복 제거
-    max_freq = 0
-    for i in str1: # str1의 글자가 str2에도 존재한다면 빈도수 계산 후 최빈값 갱신
-        if i in str2 and max_freq < str2.count(i):
-            max_freq = str2.count(i)
+# def check(index,str1,str2):
+#     str1 = list(set(str1)) # str1의 중복 제거
+#     max_freq = 0
+#     for i in str1: # str1의 글자가 str2에도 존재한다면 빈도수 계산 후 최빈값 갱신
+#         if i in str2 and max_freq < str2.count(i):
+#             max_freq = str2.count(i)
     
-    print(f"#{index} {max_freq}")
+#     print(f"#{index} {max_freq}")
 
 
-N = int(input())
+# N = int(input())
 
-for i in range(1, N+1):
-    str1 = input()
-    str2 = input()
-    check(i,str1,str2)
+# for i in range(1, N+1):
+#     str1 = input()
+#     str2 = input()
+#     check(i,str1,str2)
 
 
+def factorial(n,result):
+    if n == 0 :
+        print(result)
+    else:
+        result = result+f"{n}"
+        n -= 1
+        factorial(n, result)
+        
+a = factorial(5,"") 
