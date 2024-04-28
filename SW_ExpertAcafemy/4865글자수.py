@@ -38,12 +38,3 @@
 #     check(i,str1,str2)
 
 
-def factorial(n,result):
-    if n == 0 :
-        print(result)
-    else:
-        result = result+f"{n}"
-        n -= 1
-        factorial(n, result)
-        
-a = factorial(5,"") 
