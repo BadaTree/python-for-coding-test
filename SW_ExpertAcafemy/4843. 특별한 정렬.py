@@ -31,6 +31,7 @@ N개의 정수가 주어지면 가장 큰 수, 가장 작은 수, 2번째 큰 �
 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 특별히 정렬된 숫자를 10개까지 출력한다.
 '''
 
+# NOTE: 매번 리스트에서 최대값과 최소갓을 찾고 삭제하는 과정을 반복하여 메모리 부하가 크게 발생 
 case = int(input())
 
 for i in range(1,case+1):
@@ -39,12 +40,35 @@ for i in range(1,case+1):
     numList = list(map(int,input().split(' ')))
     
     for j in range(n):
-        if j % 2 == 0 : # 홀수번 인덱스에는 가장 큰 수 
-            max_num = max(numList) # 리스트의 가장 큰 수 찾기
-            result.append(max_num) # 결과 리스트에 추가
-            numList.remove(max_num) # 정렬한 값은 리스트에서 삭제 
-        else: 
-            min_num = min(numList) # 리스트의 가장 큰 수 찾기
-            result.append(min_num) # 결과 리스트에 추가
-            numList.remove(min_num) # 정렬한 값은 리스트에서 삭제
+        if len(result) <= 9:
+            if j % 2 == 0 : # 홀수번 인덱스에는 가장 큰 수 
+                max_num = max(numList) # 리스트의 가장 큰 수 찾기
+                result.append(max_num) # 결과 리스트에 추가
+                numList.remove(max_num) # 정렬한 값은 리스트에서 삭제 
+            else: 
+                min_num = min(numList) # 리스트의 가장 큰 수 찾기
+                result.append(min_num) # 결과 리스트에 추가
+                numList.remove(min_num) # 정렬한 값은 리스트에서 삭제
     print(f"#{i} {' '.join(map(str,result))}")
+    
+    
+case = int(input())
+
+for i in range(1, case + 1):
+    n = int(input())
+    numList = list(map(int, input().split()))
+    numList.sort()  # 입력 리스트 정렬
+    
+    result = []
+    left, right = 0, n - 1  # 정렬된 리스트의 양 끝 인덱스
+    while left <= right:
+        result.append(numList[right])  # 가장 큰 수 추가
+        result.append(numList[left])   # 가장 작은 수 추가
+        left += 1  # 왼쪽 인덱스 증가
+        right -= 1  # 오른쪽 인덱스 감소
+    
+    # 리스트 길이가 홀수일 경우, 중간값을 추가
+    if n % 2 != 0:
+        result.append(numList[left])
+
+    print(f"#{i} {' '.join(map(str, result[0:10]))}")
