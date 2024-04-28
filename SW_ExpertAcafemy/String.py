@@ -26,11 +26,11 @@ def exist_check(str1,str2,len_str1):
     except ValueError:
         return len_str1
 
-N =1 #int(input())
+N = int(input())
 
 for i in range(1,N+1):
-    str1 = "ZYJZXZTIBSDG" #input()
-    str2 = "TTXGZYJZXZTIBSDGWQLW"#input()
+    str1 = input()
+    str2 = input()
 
     n1 = len(str1)
     n2 = len(str2)
@@ -48,3 +48,33 @@ for i in range(1,N+1):
         if start+n1 == n2: # 끝까지 비교하였지만, 문자열이 일치하지 않음
             print(f"#{i} 0")
 
+'''
+코드에 대해 검토해 보겠습니다.
+
+코드의 주요 문제는 루프 조건에 있습니다. 주어진 코드에서는 두 문자열이 정확히 일치하는 경우에 대한 처리가 부족합니다. 또한, 루프를 끝내는 조건이 올바르지 않아서 문자열이 정확히 일치하지 않을 때 오류가 발생할 수 있습니다. 루프를 시작하는 인덱스를 올바르게 설정하여 모든 부분 문자열을 비교할 수 있도록 해야 합니다.
+
+다음은 수정된 코드입니다.
+
+python
+Copy code
+N = int(input())
+
+for i in range(1, N+1):
+    str1 = input()
+    str2 = input()
+
+    n1 = len(str1)
+    n2 = len(str2)
+    found = False
+
+    for start in range(n2 - n1 + 1):  # 시작 인덱스를 올바르게 설정
+        if str2[start:start+n1] == str1:
+            print(f"#{i} 1")
+            found = True
+            break
+
+    if not found:
+        print(f"#{i} 0")
+이 코드에서는 두 문자열이 정확히 일치하는 경우를 포함하여 모든 경우를 검사합니다. 문자열이 발견되면 해당 위치를 출력하고, 발견되지 않으면 0을 출력합니다.
+
+'''
