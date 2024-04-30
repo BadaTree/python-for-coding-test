@@ -37,10 +37,10 @@ print(‘{‘) 같은 경우는 입력으로 주어지지 않으므로 고려하
 
 T = int(input()) # 테스트 수 입력
 check_list = ["{","}","(",")"]
-result = True
 
 
 for i in range(1,T+1): # 테스트 수만큼 함수 반복
+    result = True
     tempStr = input()
     tempStr = [j for j in tempStr if j in check_list] # 체크하는 괄호라면 남기고, 아니면 제외
    
