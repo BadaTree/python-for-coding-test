@@ -56,3 +56,35 @@ for i in range(1,T+1): # 테스트 수만큼 함수 반복
             result = False
       
     print(f"#{i} {int(result)}")
+    
+    
+    
+    '''
+    T = int(input())  # 테스트 케이스 개수 입력
+check_list = ["{", "}", "(", ")"]
+
+for i in range(1, T + 1):  # 각 테스트 케이스에 대해 반복
+    tempStr = input()
+    stack = []  # 괄호를 저장할 스택
+    result = 1  # 결과 변수 초기화
+
+    for char in tempStr:
+        if char in check_list:
+            if char == "{" or char == "(":
+                stack.append(char)  # 여는 괄호는 스택에 push
+            else:  # 닫는 괄호일 때
+                if not stack:  # 스택이 비어있는 경우
+                    result = 0  # 올바르지 않은 괄호 쌍
+                    break
+                else:
+                    top = stack.pop()  # 스택에서 꺼내기
+                    if (char == "}" and top != "{") or (char == ")" and top != "("):
+                        result = 0  # 괄호 쌍이 일치하지 않음
+                        break
+
+    if stack:  # 스택에 남아있는 괄호가 있는 경우
+        result = 0  # 올바르지 않은 괄호 쌍
+
+    print(f"#{i} {result}")
+
+    '''
