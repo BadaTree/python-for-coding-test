@@ -1,11 +1,5 @@
 
 
-### *Goal :*
-
-
-***
-# **Coding Test** 🍑 
-
 ### *Commit Message 명명 규칙 :*
 - [간단히 규칙설명](https://velog.io/@chojs28/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EA%B7%9C%EC%B9%99)
 - [깃으로 협업 가이드 설명](https://www.freecodecamp.org/korean/news/writing-good-commit-messages-a-practical-guide/)
@@ -30,6 +24,7 @@
 
 <br><br>
 <!-- PR Description Example -->
+
 # **Language Lectures** 🍑 
 
 ### *JavaScript :*
@@ -38,8 +33,11 @@
 ### *Python :*
 - [Python - Nomad Coders](https://bit.ly/3AOxZUS)
 
-### *Python :*
-- [Python - Nomad Coders](https://bit.ly/3AOxZUS)
+### *C ++ :*
+- [The Cherno](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
+
+### *Three.Js :*
+- [Three.Js](https://www.youtube.com/watch?v=_PqQLvFa_Vw&list=PLkbzizJk4Ae9hHI_YUD3fRv8xLfS3jGEW&index=2)
 <br>
 
 # **Backend Lectures** 🍎
@@ -51,5 +49,9 @@
 - [3. 시니어코딩 - DB 설계 및 실무](https://www.youtube.com/watch?v=GroeyzBNhfU&list=PL4SJPVdQanQHJJaG4S_mMN4RK6RGEdJAn&index=13)
 <br><br>
 
+# **Tip** 🍎
 
-
+### *Vscode :*
+- [vscode Extension](https://www.youtube.com/watch?v=XMfyfNZooi4)
+- [단축키](https://www.youtube.com/watch?v=Wn7j5dfbJF4&t=167s)
+- [단축키](https://inpa.tistory.com/entry/VS-Code-%E2%8F%B1%EF%B8%8F-%EC%9C%A0%EC%9A%A9%ED%95%9C-%EB%8B%A8%EC%B6%95%ED%82%A4-%EC%A0%95%EB%A6%AC)
