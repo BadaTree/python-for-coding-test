@@ -1,5 +1,5 @@
 # TODO: Programmers 문제 풀고, 정리 노트 작성하기 
-
+# NOTE: 꼭 아래 코드 이해하고 재 풀이 해 보기 !!
 
 #[ ] 1. n의 배수 고르기 
 
@@ -40,19 +40,16 @@ def solution(str_list, ex):
 '''
 정수로 이루어진 문자열 n_str이 주어질 때, n_str의 가장 왼쪽에 처음으로 등장하는 0들을 뗀 문자열을 return하도록 solution 함수를 완성해주세요.'''
 
-1
-2
-3
 def solution(n_str):
     return str(int(n_str))
 def solution(n_str):
     return n_str.lstrip('0')
 
 
-# [ ] 배열 길이에 따라 다른 연산하기 
+# [ ] 6. 배열 길이에 따라 다른 연산하기 
 '''정수 배열 arr과 정수 n이 매개변수로 주어집니다. arr의 길이가 홀수라면 arr의 모든 짝수 인덱스 위치에 n을 더한 배열을, arr의 길이가 짝수라면 arr의 모든 홀수 인덱스 위치에 n을 더한 배열을 return 하는 solution 함수를 작성해 주세요.'''
 
-[num + n*((len(arr)+i)%2) for i, num in enumerate(arr)]
+# [num + n*((len(arr)+i)%2) for i, num in enumerate(arr)]
 
-def solution(arr, n):
-    return [arr[i] + n if i % 2 == 0 else arr[i] for i in range(len(arr))] if len(arr) % 2 != 0 else [arr[i] + n if i % 2 != 0 else arr[i] for i in range(len(arr))]
+# def solution(arr, n):
+#     return [arr[i] + n if i % 2 == 0 else arr[i] for i in range(len(arr))] if len(arr) % 2 != 0 else [arr[i] + n if i % 2 != 0 else arr[i] for i in range(len(arr))]
