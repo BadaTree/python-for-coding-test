@@ -1,6 +1,6 @@
 # 2024.05.22  Coding Test 문제 풀이 
 
-# [ ] 모의고사 
+# [ ] 1. 모의고사 
 
 '''
 문제 설명
@@ -29,7 +29,7 @@ def solution(answers):
 
     # 채점
     for i in range(len(answers)):
-        if answers[i] == ans1[i % len(ans1)]:
+        if answers[i] == ans1[i % len(ans1)]: # 수포자들의 정답지는 패턴이 반복됨을 활용
             score_list[0] += 1
         if answers[i] == ans2[i % len(ans2)]:
             score_list[1] += 1
@@ -44,3 +44,42 @@ def solution(answers):
 
 
 # [ ] 표 편집 
+
+'''
+https://school.programmers.co.kr/learn/courses/30/lessons/81303
+
+'''
+def solution(n, k, cmds):
+    ori_list = [i for i in range(n)]
+    last_del = []
+    result = ""
+    
+    # cmd 수행
+    for cmd in cmds:
+        if cmd[0] == "U":
+            k -= int(cmd[2:])
+            k = max(0, k)
+        elif cmd[0] == "D":
+            k += int(cmd[2:])
+            k = min(len(ori_list) - 1, k)
+        elif cmd[0] == "C":
+            last_del.append((k, ori_list[k]))  # 삭제된 값과 인덱스 기록
+            ori_list.pop(k)
+            if k >= len(ori_list):
+                k = len(ori_list) - 1
+        elif cmd[0] == "Z":
+            if last_del:
+                index, value = last_del.pop()
+                ori_list.insert(index, value)
+                if index <= k:
+                    k += 1
+    
+    # 순서 상관없이 존재하는지만 체크 
+    for i in range(n):
+        if i in ori_list:
+            result += "O"
+        else:
+            result += "X"
+    
+    return result
+
