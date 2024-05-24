@@ -17,6 +17,7 @@
 문제의 정답은 1, 2, 3, 4, 5중 하나입니다.
 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
 '''
+# KeyPoint :  
 
 def solution(answers):
     # 수포자들의 패턴
@@ -43,7 +44,7 @@ def solution(answers):
     return result
 
 
-# [ ] 표 편집 
+# [ ] 표 편집   1245566
 
 '''
 https://school.programmers.co.kr/learn/courses/30/lessons/81303
