@@ -63,6 +63,30 @@ https://www.acmicpc.net/problem/2910
 
 '''
 
+# 빈도 수 
+
+
+# 입력 받기
+num, max_n = map(int, input().split())
+numList = list(map(int, input().split()))
+
+# 딕셔너리 생성 및 각 수의 빈도수 카운트
+countDict = {}
+for num in numList:
+    if num in countDict:
+        countDict[num] += 1
+    else:
+        countDict[num] = 1
+
+# 딕셔너리를 값 기준으로 정렬
+sortedDict = sorted(countDict.items(), key=lambda x: (-x[1], numList.index(x[0])))
+
+# 결과 생성
+result = ' '.join([str(key) for key, _ in sortedDict for _ in range(countDict[key])])
+
+# 결과 출력
+print(result)
+
 
 
 # [3] 괄호
@@ -78,3 +102,24 @@ https://www.acmicpc.net/problem/9012
 출력
 출력은 표준 출력을 사용한다. 만일 입력 괄호 문자열이 올바른 괄호 문자열(VPS)이면 “YES”, 아니면 “NO”를 한 줄에 하나씩 차례대로 출력해야 한다. 
 '''
+
+
+N = int(input())
+
+for _ in range(N):
+    parens = list(input())
+    # ( 와 )의 수가 같을 때 즉, VPS일 때
+    if parens.count('(') == (len(parens)- parens.count('(')):
+        paren = []
+        # ( 와 )의 순서 체크 ( 다음 )가 왔을 때만 한 개의 괄호로 인정
+        for i in parens:
+            if i == '(' :
+                paren.append('(')
+            elif i == ')' and len(paren)>=1: 
+                paren.pop()
+        if len(paren) == 0:
+            print("YES")
+        else :
+            print("NO") # 괄호 순서가 잘못된 경우 예: )))(((
+    else:
+        print('NO') # 괄호가 쌍으로 존재하지 않는 경우 예: (()))
