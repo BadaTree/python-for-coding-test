@@ -17,6 +17,28 @@ N이 주어졌을 때, 제일 마지막에 남게 되는 카드를 구하는 프
 출력
 첫째 줄에 남게 되는 카드의 번호를 출력한다.
 '''
+from collections import deque
+
+
+queue = deque()
+N = int(input())
+
+for i in range(1,N+1):
+    queue.append(i)
+
+
+while len(queue) > 1:
+    queue.popleft() # 짝수번째 단순 삭제
+
+    if len(queue) == 1 :
+        break
+    queue.append(queue.popleft()) #홀수 번째 선입 삭제 후 맨 뒤에 추가
+    
+# 큐에 남은 마지막 원소를 출력
+print(queue[0])
+
+
+
 
 # [2] 빈도 정렬
 '''
