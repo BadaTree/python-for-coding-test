@@ -1,5 +1,12 @@
 # TODO : 24.05.29 코테 스터디 
 
+# [ ] 포켓몬 
+
+import collections
+
+def solution(nums):
+    return min(len(collections.Counter(nums)), (len(nums) /2))
+
 # [ ] 전화번호 목록 
 
 def solution(phone_book):
@@ -10,7 +17,7 @@ def solution(phone_book):
             return False
     return True
 
-# [ ] 테이블 해시 함수
+# [ ] 베스트앨범
 
 def sortedplays(indexs, plays):
     result = []
