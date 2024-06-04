@@ -23,8 +23,8 @@ def solution(id_list, report, k):
 # [ ] 패션왕 신해빈 (실버 3, 백준)
 # https://www.acmicpc.net/problem/9375
 
-
-
+# [ ] 미로 탈출 명령어 
+# https://school.programmers.co.kr/learn/courses/30/lessons/150365
 
 
 
