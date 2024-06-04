@@ -5,8 +5,35 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/92334
 
 def solution(id_list, report, k):
-    answer = []
-    return answer
+    # 신고 당한 id : 해당 id를 신고한 id 인덱스 배열을 저장한 딕셔너리 생성
+    id_dic = {} # 각 id의 인덱스를 저장한 딕셔너리
+    del_id = []
+    result = [0]*len(id_list)
+
+    # {id:index}
+    for i in range(len(id_list)) :
+        id_dic[f"{id_list[i]}"] = list(str(i)) 
+    
+    for i in range(len(report)):
+        a, b = report[i].split(' ')
+        
+        # 한 유저가 같은 유저를 여러번 신고시 1회로 처리. 중복 제거
+        if id_dic[f"{a}"][0] not in id_dic[f"{b}"][1:]: 
+            id_dic[f"{b}"].append(id_dic[f"{a}"][0])
+            
+    # 각 id마다 k 이상인지 check
+    # 즉 정지된 id만 남기고 다 제외 
+    for i,j in id_dic.items():
+        if len(j)-1 >= k : 
+            del_id.append(i)
+    for i in del_id:
+        for j in range(1,len(id_dic[f"{i}"])):
+            id_index = id_dic[f"{i}"][j]
+            result[int(id_index)] += 1
+            
+    # 최종 id마다 받은 메일 수를 반환하는 배열 출력 
+    return result
+
 
 # [ ] 순위 검색 (Level2, 프로그래머스)
 # https://school.programmers.co.kr/learn/courses/30/lessons/72412
