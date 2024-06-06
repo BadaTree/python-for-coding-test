@@ -41,21 +41,21 @@ def solution(id_list, report, k):
 
 # [ ] 의상 (Level2, 프로그래머스)
 # https://school.programmers.co.kr/learn/courses/30/lessons/42578 
+
 #[의상의 이름, 의상의 종류], 각 종류별로 최대 1가지 의상, 하루에 최소 한 개의 의상
 
 def solution(clothes):
     clothes_dic ={}
     # 종류 별로 의상 정리 
     for clothe in clothes:
-        if clothe[1] in clothes_dic :
-            clothes_dic[f"{clothe[1]}"].append(clothe[0])
-        else:
-            clothes_dic[f"{clothe[1]}"] = [str(clothe[0])]
-    print(clothes_dic)
-    # 각 종류별로 입지않는 경우 추가
+        clothes_dic[clothe[1]] = clothes_dic.get(clothe[1],0) + 1
+            
+    # 의상을 아예 안 입은 경우 +1 해주고 총 조합의 수 카운트
+    result = 1
+    for type in clothes_dic:
+        result *= (clothes_dic[type]+1)
     
-    # 종류별로 전체 조합 계산하기
-    return ""
+    return result-1
 
 # [ ] 메뉴 리뉴얼 (level2, 프로그래머스)
 # https://school.programmers.co.kr/learn/courses/30/lessons/72411
