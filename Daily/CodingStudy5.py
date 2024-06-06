@@ -51,7 +51,10 @@ def solution(clothes):
             clothes_dic[f"{clothe[1]}"].append(clothe[0])
         else:
             clothes_dic[f"{clothe[1]}"] = [str(clothe[0])]
-    print(len(clothes_dic.keys()))
+    print(clothes_dic)
+    # 각 종류별로 입지않는 경우 추가
+    
+    # 종류별로 전체 조합 계산하기
     return ""
 
 # [ ] 메뉴 리뉴얼 (level2, 프로그래머스)
