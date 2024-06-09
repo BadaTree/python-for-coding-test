@@ -2,15 +2,15 @@
 
 # import sys
 
-# input = sys.stdin.read
-# data = input().split()
+input = sys.stdin.read
+data = input().split()
 
-# data = list(map(int,data[1:]))
+data = list(map(int,data[1:]))
 
-# data.sort()
+data.sort()
 
-# for i in data :
-#     print(i)
+for i in data :
+    print(i)
 
 # 백준 1427
 N = list(input())
