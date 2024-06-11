@@ -44,4 +44,28 @@ level3문제: https://school.programmers.co.kr/learn/courses/30/lessons/42579
 
 폰켓몬(level1): https://school.programmers.co.kr/learn/courses/30/lessons/1845
 전화번호 목록(level2): https://school.programmers.co.kr/learn/courses/30/lessons/42577
+
+
+# [ ] 메뉴 리뉴얼 (level2, 프로그래머스)
+# https://school.programmers.co.kr/learn/courses/30/lessons/72411
+
+
+# [ ] 패션왕 신해빈 (실버 3, 백준)
+# https://www.acmicpc.net/problem/9375
+
+# [ ] 미로 탈출 명령어 
+# https://school.programmers.co.kr/learn/courses/30/lessons/150365
+
+
+# [ ] 순위 검색 (Level2, 프로그래머스)
+# https://school.programmers.co.kr/learn/courses/30/lessons/72412
+
+
+상근이의 여행: https://www.acmicpc.net/problem/9372 
+
+무한이진트리: https://www.acmicpc.net/problem/2078
+
+Smallest Number in infinite Set: https://leetcode.com/problems/smallest-number-in-infinite-set/description
+
+카펫: https://school.programmers.co.kr/learn/courses/30/lessons/42842
 '''
