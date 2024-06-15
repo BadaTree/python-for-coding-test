@@ -53,8 +53,6 @@ for _ in range(T):
     print(N-1)
 
 
-
-
 # 4. Binary tree (백준 13237, 실3)
 # https://www.acmicpc.net/problem/13237
 

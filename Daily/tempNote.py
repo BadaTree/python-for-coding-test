@@ -52,12 +52,43 @@
 
 # print(factor[K-1] if len(factor)>= K else 0)
 
-while True:
-    N = int(input())
-    if N == -1 :
-        break
-    factor = [i for i in range(1,N) if N%i == 0]
-    if N == sum(factor): # 완전수라면
-        print( f"{N} = " + " + ".join(map(str, factor)))
-    else :
-        print(f"{N} is NOT perfect.")
+# while True:
+#     N = int(input())
+#     if N == -1 :
+#         break
+#     factor = [i for i in range(1,N) if N%i == 0]
+#     if N == sum(factor): # 완전수라면
+#         print( f"{N} = " + " + ".join(map(str, factor)))
+#     else :
+#         print(f"{N} is NOT perfect.")
+
+
+# 백준 1979
+
+# N = int(input())
+# nums = list(map(int,input().split()))
+
+# print(sum([1 for num in nums if len([i for i in range(2, num) if num % i == 0]) == 0 and num > 1]))
+
+
+# 백준 2581
+# def is_prime(num):
+#     if num <= 1:
+#         return False
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num % i == 0:
+#             return False
+#     return True
+
+# N = int(input())
+# M = int(input())
+# result = [num for num in range(N, M + 1) if is_prime(num)]
+
+# print(f"{sum(result)}\n{min(result)}") if result else print(-1)
+
+# print(4 ** 0.5,sqrt(4))
+
+x, y, w, h = map(int,input().split(' '))
+point=[(x,0),(0,y),(x,h),(w,y)]
+
+print(int(min([(((x-i)**2+(y-j)**2)**0.5) for i,j in point])))
