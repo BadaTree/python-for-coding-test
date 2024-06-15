@@ -88,7 +88,22 @@
 
 # print(4 ** 0.5,sqrt(4))
 
-x, y, w, h = map(int,input().split(' '))
-point=[(x,0),(0,y),(x,h),(w,y)]
+# x, y, w, h = map(int,input().split(' '))
+# point=[(x,0),(0,y),(x,h),(w,y)]
 
-print(int(min([(((x-i)**2+(y-j)**2)**0.5) for i,j in point])))
+# print(int(min([(((x-i)**2+(y-j)**2)**0.5) for i,j in point])))
+
+from collections import Counter
+
+x_list = []
+y_list = []
+for i in range(3):
+    x,y = input().split(" ")
+
+    x_list.append(x)
+    y_list.append(y)
+
+x_Count = Counter(x_list)
+y_Count = Counter(y_list)
+
+print(next(x for x in x_Count if x_Count[x]==1),next(y for y in y_Count if y_Count[y]==1))
