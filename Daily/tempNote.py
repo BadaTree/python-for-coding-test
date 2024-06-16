@@ -135,25 +135,88 @@
 
 # [ ] 백준 5073
 
+# import sys
+
+# data = sys.stdin.read().split()
+# set_tri = set()
+
+# for i in range(0,len(data),3):
+#     triangle = [int(data[i]),int(data[i+1]),int(data[i+2])]
+  
+#     if triangle == [0,0,0]:
+#         break
+#     else:
+#         # 삼각형의 조건을 만족하지 못할 때
+#         if max(triangle) >= (sum(triangle)-max(triangle)):
+#             print("Invalid")
+#         else :
+#             set_tri = set(triangle)
+#             if len(set_tri) == 1:
+#                 print("Equilateral")
+#             if len(set_tri) == 2:
+#                 print("Isosceles")
+#             if len(set_tri) == 3:
+#                 print("Scalene")
+
+# import sys
+
+# input_data = sys.stdin.read().strip().splitlines()
+
+# for line in input_data:
+#     a, b, c = map(int, line.split())
+    
+#     if a == 0 and b == 0 and c == 0:
+#         break
+    
+#     sides = [a, b, c]
+#     sides.sort()  # 세 변의 길이를 오름차순으로 정렬
+    
+#     if sides[2] >= sides[0] + sides[1]:
+#         print("Invalid")
+#     elif a == b == c:
+#         print("Equilateral")
+#     elif a == b or b == c or c == a:
+#         print("Isosceles")
+#     else:
+#         print("Scalene")
+
+# nums = list(map(int,input().split(' ')))
+# nums.sort(reverse = True)
+
+# # 삼각형의 조건을 만족할 때
+# if nums[0]< nums[1]+nums[2] :
+#     print(sum(nums))
+# else :
+#     print((nums[1]+nums[2])*2 -1)
+
+# import sys
+
+
+# a,b,c= map(int,sys.stdin.read().splitlines())
+
+    
+# if sum([a,b,c]) != 180 :
+#     print("Error")
+# elif a == b == c :
+#     print("Equilateral")
+# elif a==b or b==c or c==a:
+#     print("Isosceles")
+# else:
+#     print("Scalene")
+    
+# n = int(input())
+# print(2 *( n + 2))
+
+
 import sys
 
-data = sys.stdin.read().split()
-set_tri = set()
+N = int(input())
 
-for i in range(0,len(data),3):
-    triangle = [int(data[i]),int(data[i+1]),int(data[i+2])]
-  
-    if triangle == [0,0,0]:
-        break
-    else:
-        # 삼각형의 조건을 만족하지 못할 때
-        if max(triangle) >= (sum(triangle)-max(triangle)):
-            print("Invalid")
-        else :
-            set_tri = set(triangle)
-            if len(set_tri) == 1:
-                print("Equilateral")
-            if len(set_tri) == 2:
-                print("Isosceles")
-            if len(set_tri) == 3:
-                print("Scalene")
+scores = []
+for i in range(N):
+    score = input()
+    scores.append(int(score))
+
+scores.sort()
+for i in scores:
+    print(i)
