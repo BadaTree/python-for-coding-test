@@ -208,15 +208,29 @@
 # print(2 *( n + 2))
 
 
-import sys
+# import sys
+
+# N = int(input())
+
+# scores = []
+# for i in range(N):
+#     score = input()
+#     scores.append(int(score))
+
+# scores.sort()
+# for i in scores:
+#     print(i)
+
+def compute_lcm(a, b):
+    for j in range(1,45001):  
+        if (max(a,b)*j) % min(a,b) == 0:
+                print(max(a,b)*j)
+                break
+import math
 
 N = int(input())
 
-scores = []
 for i in range(N):
-    score = input()
-    scores.append(int(score))
+    a,b = map(int, input().split(" "))
 
-scores.sort()
-for i in scores:
-    print(i)
+    print(math.lcm(a, b))
