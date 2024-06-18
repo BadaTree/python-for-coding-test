@@ -237,24 +237,52 @@
 #     print(math.lcm(a, b))
 
 #[ ] 백준 1735
-import math
+# import math
 
-a1, a2 = map(int, input().split())
-b1, b2 = map(int, input().split())
+# a1, a2 = map(int, input().split())
+# b1, b2 = map(int, input().split())
 
-# 최소공배수(LCM) 구하기
-lcm = math.lcm(a2, b2)
+# # 최소공배수(LCM) 구하기
+# lcm = math.lcm(a2, b2)
 
-# 분수를 공통 분모로 변환하여 합 계산
-c1 = a1 * (lcm // a2) + b1 * (lcm // b2)
-c2 = lcm
+# # 분수를 공통 분모로 변환하여 합 계산
+# c1 = a1 * (lcm // a2) + b1 * (lcm // b2)
+# c2 = lcm
 
 
-gcd = math.gcd(c1, c2)
+# gcd = math.gcd(c1, c2)
 
-# 분자와 분모를 최대공약수로 나누기
-c1 //= gcd
-c2 //= gcd
+# # 분자와 분모를 최대공약수로 나누기
+# c1 //= gcd
+# c2 //= gcd
 
-# 결과 출력
-print(f"{c1} {c2}")
+# # 결과 출력
+# print(f"{c1} {c2}")
+
+# [ ] 11650 좌표 정렬하기
+import sys
+
+N = int(input())
+points =[]
+input = sys.stdin.read().splitlines()
+for point in input:
+    x,y = point.split()
+    points.append([int(x), int(y)])
+
+points.sort()
+for i in range(N):
+    print(points[i][0],points[i][1])
+    
+    
+
+
+N = int(input())
+points =[]
+
+for point in range(N):
+    x,y = input().split()
+    points.append([int(x), int(y)])
+
+points.sort()
+for i in range(N):
+    print(points[i][0],points[i][1])
