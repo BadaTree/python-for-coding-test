@@ -221,16 +221,40 @@
 # for i in scores:
 #     print(i)
 
-def compute_lcm(a, b):
-    for j in range(1,45001):  
-        if (max(a,b)*j) % min(a,b) == 0:
-                print(max(a,b)*j)
-                break
+# [ ] 1934 백준
+# def compute_lcm(a, b):
+#     for j in range(1,45001):  
+#         if (max(a,b)*j) % min(a,b) == 0:
+#                 print(max(a,b)*j)
+#                 break
+# import math
+
+# N = int(input())
+
+# for i in range(N):
+#     a,b = map(int, input().split(" "))
+
+#     print(math.lcm(a, b))
+
+#[ ] 백준 1735
 import math
 
-N = int(input())
+a1, a2 = map(int, input().split())
+b1, b2 = map(int, input().split())
 
-for i in range(N):
-    a,b = map(int, input().split(" "))
+# 최소공배수(LCM) 구하기
+lcm = math.lcm(a2, b2)
 
-    print(math.lcm(a, b))
+# 분수를 공통 분모로 변환하여 합 계산
+c1 = a1 * (lcm // a2) + b1 * (lcm // b2)
+c2 = lcm
+
+
+gcd = math.gcd(c1, c2)
+
+# 분자와 분모를 최대공약수로 나누기
+c1 //= gcd
+c2 //= gcd
+
+# 결과 출력
+print(f"{c1} {c2}")
