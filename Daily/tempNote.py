@@ -260,29 +260,43 @@
 # print(f"{c1} {c2}")
 
 # [ ] 11650 좌표 정렬하기
-import sys
+# import sys
 
-N = int(input())
-points =[]
-input = sys.stdin.read().splitlines()
-for point in input:
-    x,y = point.split()
-    points.append([int(x), int(y)])
+# N = int(input())
+# points =[]
+# input = sys.stdin.read().splitlines()
+# for point in input:
+#     x,y = point.split()
+#     points.append([int(x), int(y)])
 
-points.sort()
-for i in range(N):
-    print(points[i][0],points[i][1])
+# points.sort()
+# for i in range(N):
+#     print(points[i][0],points[i][1])
     
     
+# [ ] 11651 좌표 정렬하기 2
 
+# N = int(input())
+# points =[]
+
+# for point in range(N):
+#     x,y = input().split()
+#     points.append([int(y),int(x)])
+
+# points.sort()
+# for i in range(N):
+#     print(points[i][1],points[i][0])
+
+# [ ] 10814 나이순 정렬
 
 N = int(input())
-points =[]
+members = []
 
-for point in range(N):
-    x,y = input().split()
-    points.append([int(x), int(y)])
-
-points.sort()
 for i in range(N):
-    print(points[i][0],points[i][1])
+    age,name = input().split()
+    members.append([int(age), i,name])
+    
+members.sort(key=lambda x :(x[0],x[1]))
+
+for i in range(N):
+    print(members[i][0],members[i][2])
