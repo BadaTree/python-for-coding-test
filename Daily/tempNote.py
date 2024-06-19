@@ -288,7 +288,9 @@
 #     print(points[i][1],points[i][0])
 
 # [ ] 10814 나이순 정렬
+import time
 
+start = time.time()
 N = int(input())
 members = []
 
@@ -300,3 +302,6 @@ members.sort(key=lambda x :(x[0],x[1]))
 
 for i in range(N):
     print(members[i][0],members[i][2])
+end = time.time()
+
+print(end-start)
