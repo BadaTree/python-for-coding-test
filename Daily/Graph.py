@@ -11,7 +11,8 @@ def DFS(graph,v,visited):
         if not visited[i]:
             visited[i] = True
             DFS(graph,i,visited)
-            
+
+# 최단 경로             
 from collections import deque
 
 def BFS(graph,v,visited):
@@ -83,7 +84,7 @@ print(DFS(graph,1,visited))
 
 
 import sys
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(10000) # 큰 입력값에서 재귀 깊이 초과를 방지
 
 def DFS(x, y):
     points[x][y] = False  # 방문 처리하기

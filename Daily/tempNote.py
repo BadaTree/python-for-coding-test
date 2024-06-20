@@ -288,20 +288,89 @@
 #     print(points[i][1],points[i][0])
 
 # [ ] 10814 나이순 정렬
-import time
+# import time
 
-start = time.time()
-N = int(input())
-members = []
+# start = time.time()
+# N = int(input())
+# members = []
 
-for i in range(N):
-    age,name = input().split()
-    members.append([int(age), i,name])
+# for i in range(N):
+#     age,name = input().split()
+#     members.append([int(age), i,name])
     
-members.sort(key=lambda x :(x[0],x[1]))
+# members.sort(key=lambda x :(x[0],x[1]))
 
+# for i in range(N):
+#     print(members[i][0],members[i][2])
+# end = time.time()
+
+# print(end-start)
+
+
+#[ ] 28278 스택 2
+
+N = int(input())
+
+stack_list = []
 for i in range(N):
-    print(members[i][0],members[i][2])
-end = time.time()
+    result = 0
+    command = list(map(int,input().split(' ')))
+    if command[0] == 1:
+        stack_list.append(command[1])
+    else:
+        if command[0] == 2 :
+            if stack_list:
+                result = stack_list.pop()
+            else:
+                result = -1
+        elif command[0] == 3 :
+            result = len(stack_list)
+        elif command[0] == 4 :
+            result = 0 if stack_list else 1
+        elif command[0] == 5:
+            if stack_list:
+                result = stack_list[-1]
+            else:
+                result = -1
+        print(result)
 
-print(end-start)
+# NOTE : 위 코드 시간 초과 -> sys.stdin으로 한 번에 읽기, 
+# 결과 result 리스트에 저장하고 한번에 출력하기
+
+import sys
+input = sys.stdin.read
+
+N, *commands = input().split()
+
+N = int(N)
+commands = list(map(int, commands))
+
+stack_list = []
+result = []
+
+i = 0
+while i < len(commands):
+    command = commands[i]
+    if command == 1:
+        stack_list.append(commands[i + 1])
+        i += 2
+    elif command == 2:
+        if stack_list:
+            result.append(stack_list.pop())
+        else:
+            result.append(-1)
+        i += 1
+    elif command == 3:
+        result.append(len(stack_list))
+        i += 1
+    elif command == 4:
+        result.append(0 if stack_list else 1)
+        i += 1
+    elif command == 5:
+        if stack_list:
+            result.append(stack_list[-1])
+        else:
+            result.append(-1)
+        i += 1
+
+sys.stdout.write('\n'.join(map(str, result)) + '\n')
