@@ -309,6 +309,7 @@
 
 #[ ] 28278 스택 2
 
+'''
 N = int(input())
 
 stack_list = []
@@ -374,3 +375,88 @@ while i < len(commands):
         i += 1
 
 sys.stdout.write('\n'.join(map(str, result)) + '\n')
+'''
+
+# [ ] 10773 
+'''
+
+N = int(input())
+nums =[]
+
+for i in range(N):
+    num = int(input())
+    if not num:
+        nums.pop()
+    else:
+        nums.append(num)
+print(sum(nums))
+'''
+
+# [ ] 18258 큐 2 
+'''
+import sys 
+from collections import deque
+
+queue = deque()
+result = []
+input = sys.stdin.readlines()
+N = int(input[0].strip())
+
+for i in range(1,N+1):
+    command = input[i].strip().split()
+
+    if command[0] == "push":
+        queue.append(int(command[1]))
+    elif command[0] == "push":
+        result.append(queue.popleft() if queue else -1)
+    elif command[0] == "size":
+        result.append(len(queue))
+    elif command[0] == "empty":
+        result.append(0 if queue else 1)
+    elif command[0] == "front":
+        result.append(queue[0] if queue else -1)
+    elif command[0] == "back":
+        result.append(queue[-1] if queue else -1)
+
+print('\n'.join(map(str,result)))
+
+'''
+
+# [ ] 11866 
+
+# N,K = map(int,input().split(' '))
+
+# nums = [True]* (N)
+# p = -1 # 이동 위치를 저장()
+# m = 0 
+# result = []
+
+# # 모든 사람이 제거될 때까지 반복
+# while(sum(nums) != 0):
+#     # 0번 째부터 포인터 이동하면서 K 번 째 사람 찾기
+#     p += 1
+#     if p == N: # 마지막 인덱스에서 첫 인덱스로 넘어갈 때 (원형구조 구현)
+#         p = 0
+
+#     if nums[p]: # 살아있는 사람만 카운트. 죽은 사람은 그냥 패스  
+#         m += 1
+#     # K번 째 제거 대상을 찾았을 때 !
+#     if m == K: 
+#         result.append(p+1)
+#         nums[p] = False
+#         m = 0
+        
+# print(f"<{', '.join(map(str,result))}>")
+
+from collections import deque
+
+N,K = map(int,input().split(' '))
+result = []
+
+queue = deque([i for i in range(1,N+1)])
+
+while queue:
+    queue.rotate(-(K-1))
+    result.append(queue.popleft())
+    
+print(f"<{', '.join(map(str,result))}>")
