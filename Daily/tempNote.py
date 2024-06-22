@@ -494,8 +494,8 @@ for i in range(1,N+1):
 print('\n'.join(map(str,result))) 
 '''
 
-# [ ] 2346         
-
+# [ ] 백준 2346         
+'''
 from collections import deque
 
 N = int(input())
@@ -519,3 +519,137 @@ for i in range(N-1):
         result.append(queue.pop())
     
 print(' '.join(map(str,result)))
+'''
+
+# [ ] 백준 15439
+'''
+N = int(input())
+#상의 1개당 고를 수 있는 하의는 N-1개 즉 총 조합은 N*(N-1)
+print(N*(N-1))
+'''
+
+# [ ] 백준 24723
+'''
+N = int(input())
+#상의 1개당 고를 수 있는 하의는 N-1개 즉 총 조합은 N*(N-1)
+print(2**N)
+'''
+
+# [ ] 백준 10872 
+'''
+N = int(input())
+result = 1
+
+for i in range(1,N+1):
+    result *= i
+print(result)
+'''
+
+#[ ] 백준 11050 
+# NOTE: 이항계수가 뭐지?
+
+'''
+def factorial(n):
+    result = 1
+    for i in range(1,n+1):
+        result *= i
+    return result
+
+N,K = map(int,input().split(' '))
+
+print(factorial(N) // (factorial(K) * factorial(N - K)))
+'''
+
+# [ ] 백준 1010
+# NOTE: M>N일 때, M개 중에 N개를 고르는 경우의 수에서 왜 이항계수를 활용..?
+'''
+def factorial(n):
+    result = 1
+    for i in range(1,n+1):
+        result *= i
+    return result
+
+T = int(input())
+for i in range(T):
+    N,M = map(int,input().split(' '))
+
+    print(factorial(M) // (factorial(N) * factorial(M - N)))
+'''
+
+# [ ] 백준 1037
+'''
+N = int(input())
+
+nums = list(map(int,input().split(' ')))
+
+nums.sort()
+
+print(nums[0]*nums[-1])
+'''
+
+# [ ] 백준 25192
+'''
+import sys
+
+input = sys.stdin.read().strip().splitlines()
+N = int(input[0])
+records = input[1:]
+
+greeted_users = set()
+count = 0
+
+for msg in records:
+    if msg == "ENTER":
+        greeted_users.clear()
+    else:
+        if msg not in greeted_users:
+            greeted_users.add(msg)
+            count += 1
+
+print(count)
+
+'''
+
+# [ ] 백준 26069
+'''
+N = int(input())
+
+# 춤을 추는 사람들을 저장하는 집합
+dance = set()
+dance.add('ChongChong')
+
+for _ in range(N):
+    a, b = input().split()
+    
+    if a in dance or b in dance:
+        dance.add(a)
+        dance.add(b)
+
+print(len(dance))
+'''
+
+# [ ] 백준 2108 
+'''
+import sys
+from collections import Counter as CollectionsCounter
+
+def custom_counter(num):
+    nums_count = CollectionsCounter(num)
+    max_count = max(nums_count.values())
+    mode = [ key for key,value in nums_count.items() if value == max_count]
+    mode.sort()
+   
+    return mode[0] if len(mode)==1 else mode[1]
+
+input_data = sys.stdin.read().splitlines()
+
+N = int(input_data[0])
+
+nums = list(map(int, input_data[1:]))
+nums.sort()
+
+print(round(sum(nums) / N))  # Mean
+print(nums[(N-1)//2] if N != 1 else nums[0])  # Median
+print(custom_counter(nums))  # Mode count
+print(nums[-1]-nums[0])  # Range
+'''
