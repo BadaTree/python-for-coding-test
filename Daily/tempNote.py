@@ -717,6 +717,7 @@ for word, _ in sorted_words:
 
 # [ ] 백준 25206
 # 학점 등금 
+'''
 import sys
 
 data = sys.stdin.read().strip().splitlines()
@@ -734,3 +735,27 @@ for i in range(20):
 gpa = score_avg / score_sum if score_sum > 0 else 0.0
 
 print("{:.6f}".format(gpa))
+
+'''
+# [ ] 백준 2798 
+
+
+
+N,M = map(int, input().split(' '))
+jack = 0
+nums = list(map(int,input().split(' ')))
+nums.sort(reverse=True)
+
+# M에 최대한 가까운 카드 3장의 합을 찾을 때까지 반복
+# 첫번쨰 카드 고르기
+for i in range(len(nums)):
+    for j in range(len(nums)-1):
+        for k in range(len(nums)-2):
+            if M>=sum([nums[i],nums[i+j+1],nums[i+j+k+2]]) :
+                print(jack)
+                break
+print(jack)
+        
+    
+
+
