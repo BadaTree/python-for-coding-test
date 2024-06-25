@@ -742,18 +742,33 @@ print("{:.6f}".format(gpa))
 
 
 N,M = map(int, input().split(' '))
-jack = 0
+jack = 100000
 nums = list(map(int,input().split(' ')))
 nums.sort(reverse=True)
+find = 0
+
+def find_jack(i,nums):
+    result = 0 
+    for j in range(i+1,len(nums)):
+        if M>=sum([nums[i],nums[j]]) :
+            for k in range(i+j+2,len(nums)):
+                if M>=sum([nums[i],nums[j],nums[k]]) :
+                    result = sum([nums[i],nums[j],nums[k]])
+                    break
+    
+    return result
 
 # M에 최대한 가까운 카드 3장의 합을 찾을 때까지 반복
 # 첫번쨰 카드 고르기
-for i in range(len(nums)):
-    for j in range(len(nums)-1):
-        for k in range(len(nums)-2):
-            if M>=sum([nums[i],nums[i+j+1],nums[i+j+k+2]]) :
-                print(jack)
-                break
+
+for i in range(len(nums)-2):
+    if jack <= M:
+        break
+    else:
+        if sum([nums[i],nums[i+1]]) < M:
+            jack = find_jack(i,nums)
+            
+
 print(jack)
         
     
