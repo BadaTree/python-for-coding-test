@@ -768,9 +768,26 @@ for i in range(len(nums)-2):
         if sum([nums[i],nums[i+1]]) < M:
             jack = find_jack(i,nums)
             
-
 print(jack)
         
-    
+from itertools import combinations
+
+def blackjack(N, M, cards):
+    max_sum = 0
+    # 가능한 3장의 카드 조합을 생성.
+    for combo in combinations(cards, 3):
+        current_sum = sum(combo)
+        # 합이 M을 넘지 않으면서 최대값을 갱신합니다.
+        if max_sum < current_sum <= M:
+            max_sum = current_sum
+    return max_sum
+
+# 입력 처리
+N, M = map(int, input().split())
+cards = list(map(int, input().split()))
+
+# 결과 출력
+print(blackjack(N, M, cards))
+
 
 
