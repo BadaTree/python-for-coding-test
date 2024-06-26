@@ -82,7 +82,7 @@ print(DFS(graph,1,visited))
 # https://www.acmicpc.net/problem/1012
 # 행 N(y),열 M(x)
 
-
+'''
 import sys
 sys.setrecursionlimit(10000) # 큰 입력값에서 재귀 깊이 초과를 방지
 
@@ -125,7 +125,7 @@ for _ in range(Case):
     print(count)
      
                 
-
+'''
 # [4] 2178번: 미로 탐색 (실버 1)
 # https://www.acmicpc.net/problem/2178
 
@@ -138,6 +138,28 @@ for _ in range(Case):
 
 # [1] 1,2,3 더하기 (실버3)
 # https://www.acmicpc.net/problem/9095
+
+import sys
+from itertools import product
+
+
+def find(nums,j):
+    result = 0
+    for comb in list(product(nums,repeat=j)):
+        if sum(comb) == n :
+            result = 1
+    return result
+
+T = int(input())
+nums = [1,2,3]
+case = 0
+
+for i in range(T):
+    n = int(input())
+    for j in range(1,n+1):
+        case += find(nums,j)
+    print(case)
+            
 
 
 
