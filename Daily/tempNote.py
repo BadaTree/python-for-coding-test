@@ -738,9 +738,7 @@ print("{:.6f}".format(gpa))
 
 '''
 # [ ] 백준 2798 
-
-
-
+'''
 N,M = map(int, input().split(' '))
 jack = 100000
 nums = list(map(int,input().split(' ')))
@@ -769,6 +767,7 @@ for i in range(len(nums)-2):
             jack = find_jack(i,nums)
             
 print(jack)
+'''
         
 from itertools import combinations
 
@@ -781,7 +780,7 @@ def blackjack(N, M, cards):
         if max_sum < current_sum <= M:
             max_sum = current_sum
     return max_sum
-
+'''
 # 입력 처리
 N, M = map(int, input().split())
 cards = list(map(int, input().split()))
@@ -789,5 +788,20 @@ cards = list(map(int, input().split()))
 # 결과 출력
 print(blackjack(N, M, cards))
 
+from itertools import combinations
 
+def find_jack(N,M,nums):
+    max_sum = 0
+    # 카드 중에서 세 가지를 뽑는 조합 생성
+    for comb in combinations(nums,3):
+        current_sum = sum(comb)
+        # 그 합이 M을 넘지 않으면서 가장 큰 값 갱신하며 찾기
+        if max_sum < current_sum <= M:
+            max_sum = current_sum
+    return max_sum
 
+N,M = map(int, input().split(' '))
+nums = list(map(int,input().split(' ')))
+
+print(find_jack(N,M,nums))
+'''
