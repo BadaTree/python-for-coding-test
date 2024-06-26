@@ -134,4 +134,12 @@ for _ in range(Case):
 
 
 
+#[ ] 24.06.26 공통 문제 
 
+# [1] 1,2,3 더하기 (실버3)
+# https://www.acmicpc.net/problem/9095
+
+
+
+# [2] 가장 긴 바이토닉 부분 수열(골드5)
+# https://www.acmicpc.net/problem/11054
