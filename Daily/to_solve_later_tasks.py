@@ -69,3 +69,21 @@ Smallest Number in infinite Set: https://leetcode.com/problems/smallest-number-i
 
 카펫: https://school.programmers.co.kr/learn/courses/30/lessons/42842
 '''
+
+# [ ] 백준 2231
+
+def find_smallest_constructor(target):
+    # 각 자리수의 합이 최대 9이므로 탐색 시작점을 target - 9 * len(str(target))로 설정
+    start = max(1, target - 9 * len(str(target)))
+    
+    for candidate in range(start, target):
+        sum_with_digits = candidate + sum(map(int, str(candidate)))
+        if sum_with_digits == target:
+            return candidate
+    return 0
+
+# 입력 처리
+target = int(input())
+
+# 결과 출력
+print(find_smallest_constructor(target))

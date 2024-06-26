@@ -767,8 +767,8 @@ for i in range(len(nums)-2):
             jack = find_jack(i,nums)
             
 print(jack)
-'''
-        
+
+
 from itertools import combinations
 
 def blackjack(N, M, cards):
@@ -780,15 +780,16 @@ def blackjack(N, M, cards):
         if max_sum < current_sum <= M:
             max_sum = current_sum
     return max_sum
-'''
+
 # 입력 처리
 N, M = map(int, input().split())
 cards = list(map(int, input().split()))
-
+print(list(combinations(cards, 3)))
 # 결과 출력
 print(blackjack(N, M, cards))
 
 from itertools import combinations
+
 
 def find_jack(N,M,nums):
     max_sum = 0
@@ -804,4 +805,39 @@ N,M = map(int, input().split(' '))
 nums = list(map(int,input().split(' ')))
 
 print(find_jack(N,M,nums))
+
 '''
+
+# [ ] 백준 2231
+from itertools import product
+
+def find_M(N,nums):
+    min_M = 100000000
+
+    for m in list(product(nums,repeat=len(str(N)))):
+        M = int(''.join(map(str,m)))
+    
+        if (sum(m) + M) == N and M < min_M:
+            min_M = M
+    return min_M if min_M != 100000000 else 0
+
+N = int(input())
+nums = [i for i in range(0,10)]
+
+print(find_M(N,nums))
+
+def find_smallest_constructor(target):
+    # 각 자리수의 합이 최대 9이므로 탐색 시작점을 target - 9 * len(str(target))로 설정
+    start = max(1, target - 9 * len(str(target)))
+    
+    for candidate in range(start, target):
+        sum_with_digits = candidate + sum(map(int, str(candidate)))
+        if sum_with_digits == target:
+            return candidate
+    return 0
+
+# 입력 처리
+target = int(input())
+
+# 결과 출력
+print(find_smallest_constructor(target))
