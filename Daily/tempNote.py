@@ -809,6 +809,7 @@ print(find_jack(N,M,nums))
 '''
 
 # [ ] 백준 2231
+'''
 from itertools import product
 
 def find_M(N,nums):
@@ -841,3 +842,19 @@ target = int(input())
 
 # 결과 출력
 print(find_smallest_constructor(target))
+'''
+
+# [ ] 백준 19532
+'''
+# 해가 하나이고, 변수와 방정식의 수가 동일한 연립 방정식 풀기 -> 크래머 공식
+# 크래머 공식으로 풀기
+
+a,b,c,d,e,f =map(int,input().split(' '))
+
+A = a*e - b*d
+A1 = c*e - b*f
+A2 = a*f - c*d
+print(A1//A, A2//A)
+'''
+
+# [ ]
