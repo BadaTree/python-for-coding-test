@@ -858,3 +858,82 @@ print(A1//A, A2//A)
 '''
 
 # [ ]
+'''
+a,b,c = map(int,input().split(' '))
+print(a+b+c)
+'''
+'''
+print("\\    /\\")
+print(" )  ( ')")
+print("(  /  )")
+print(" \(__)|")
+'''
+'''
+print("|\_/|")
+print("|q p|   /}")
+print("( 0 )\"\"\"\\")
+print("""|"^"`   |""")
+print("||_/=\\__|")
+
+'''
+
+'''
+N= int(input())
+for i in range(1,10):
+    print(f"{N} * {i} = {N*i}")
+'''
+'''
+N = int(input())
+print(sum([i for i in range(1,N+1)]))
+'''
+'''
+total_price = int(input())
+N = int(input())
+
+final_price = 0
+
+for i in range(N):
+    price,n = map(int,input().split(" "))
+    final_price += price*n
+
+print("Yes" if total_price == final_price else "No")
+'''
+'''
+N = int(input())
+
+print(("long"+" ")*(N//4)+"int")
+'''
+'''
+import sys
+
+input = sys.stdin.read().strip().splitlines()
+
+N = int(input[0])
+
+
+for i in range(1,N+1):
+    a,b = map(int,input[i].split(' '))
+    print(a+b)
+    '''
+'''
+N = int(input())
+
+[print(' ' * (N-i)+'*' * i) for i in range(1, N + 1)]
+'''
+'''
+import sys
+
+input = sys.stdin.read().splitlines()
+running =  True 
+i = 0
+
+[print(int(input[i][0])+ int(input[i][2])) for i in range(len(input)) ]
+'''
+
+import sys
+
+nums = sys.stdin.read().splitlines()
+nums = list(map(int, nums))
+
+print(max(nums))
+print(nums.index(max(nums))+1)
