@@ -929,7 +929,7 @@ i = 0
 
 [print(int(input[i][0])+ int(input[i][2])) for i in range(len(input)) ]
 '''
-
+'''
 import sys
 
 nums = sys.stdin.read().splitlines()
@@ -937,3 +937,39 @@ nums = list(map(int, nums))
 
 print(max(nums))
 print(nums.index(max(nums))+1)
+'''
+
+# [ ] 백준 1002
+# 류재명의 위치는 하나임으로 조규현,백승환 둘에 모두 속해야됨.
+# 조규현,백승환의 계산한 좌표의 교집합이 류재명이 있을 수 있는 좌표임.
+
+# 입력된 두 점 사이의 거리에 속하는 좌표 반환하는 함수 
+import math
+
+def find_point(x,y,xt,yt,r):
+    R = math.sqrt((xt-x)**2+(yt-y)**2)
+    if R == r :
+        return True 
+    else :
+        return False
+    
+T = int(input()) 
+x1,y1,r1,x2,y2,r2 = map(int,input().split(' '))
+x1_set = set()
+x2_set = set()
+
+# 조규현 - 류재명 거리로 찾은 예산 위치 
+for i in range(-10000,10001):
+    for j in range(-10000,10001):
+        if find_point(x1,y1,i,j,r1):
+            x1_set.add((i,j))
+    
+
+# 백승환 - 류재명 거리로 찾은 예산 위치
+for i in range(-10000,10001):
+    for j in range(-10000,10001):
+        if find_point(x2,y2,i,j,r2):
+            x2_set.add((i,j))
+
+# 두 Set의 교집합 즉 류재명 가능 위치 수 출력
+print(len(x1_set&x2_set))
