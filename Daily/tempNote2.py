@@ -183,7 +183,7 @@ for i in range(T):
     print(zero, one)
     
 '''
-
+'''
 import sys
 
 def fibonacci_count(max_N):
@@ -216,3 +216,66 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
+
+# [ ] 백준 24263
+'''
+n = int(input())
+
+print(n) # code1 수행횟수는 항상 n회
+print(1) # 다항식으로 나타내면 n이므로 1
+
+'''
+
+# [ ] 백준 24264 
+
+# n = int(input())
+
+# print(n**2) # code1 수행횟수는 항상 n회
+# print(2) # 다항식으로 나타내면 n이므로 1
+
+# # [ ] 백준 24265
+# # 1+ 2+ 3+ ...+ n-1 = n(n-1)/2
+
+# n = int(input())
+
+# # 코드1의 수행 횟수는 (n * (n - 1)) // 2
+# if n == 1:
+#     print(0)
+# else:
+#     print((n * (n - 1)) // 2)
+
+# # 최고차항의 차수는 항상 2
+# print(2)
+
+# # [ ] 백준 24266
+
+# n = int(input())
+
+# print(n**3)
+
+# # 최고차항의 차수는 항상 2
+# print(3)
+
+
+# [ ] 백준 24267
+'''
+n = int(input())
+
+# 코드1의 수행 횟수는 (n * (n - 1) * (n - 2)) // 6
+if n < 3:
+    print(0)
+else:
+    print((n * (n - 1) * (n - 2)) // 6)
+
+# 최고차항의 차수는 항상 3
+print(3)
+'''
+
+# [ ] 백준 24313 
+a1,a0 = map(int,input().split(' '))
+C= int(input())
+n = int(input())
+
+print(1 if (a1*n + a0) <= C*n and a1 <= C else 0)
+
