@@ -139,7 +139,7 @@ for n in range(1,N+1):
 
 print(answer)
 '''
-
+'''
 N = int(input())
 result = [0,1]
 
@@ -152,4 +152,67 @@ while i <= N:
     i += 1
     
 print(result[N])
+'''
+
+# [ ] 백준 1003 
+'''
+# 내가 푼 1차 풀이 -> 시간초과 ㅜ
+import sys
+
+
+def fibonacci(n): 
+    if n == 0 :
+        global zero
+        zero += 1
+        return 0 
+    elif n == 1:
+        global one 
+        one += 1
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+input = sys.stdin.read().splitlines()
+T = int(input[0])
+ 
+for i in range(T):
+    zero = 0
+    one = 0
+    N = int(input[i+1])
+    fibonacci(N)
+    print(zero, one)
     
+'''
+
+import sys
+
+def fibonacci_count(max_N):
+    zero_count = [0] * (max_N+1)
+    one_count = [0] * (max_N+1)
+
+    zero_count[0], zero_count[1] = 1,0
+    one_count[0], one_count[1] = 0,1
+
+    for i in range(2,max_N+1):
+        zero_count[i] = zero_count[i-1] + zero_count[i-2] 
+        one_count[i] = one_count[i-1] + one_count[i-2] 
+        
+    return zero_count, one_count
+
+def main():
+    input = sys.stdin.read().splitlines()
+
+    T = int(input[0])
+    result_case = [int(input[i+1]) for i in range(T)]
+
+    max_N = 40
+
+    zero_count , one_count = fibonacci_count(max_N)
+
+
+    for i in result_case:
+        print(zero_count[i],one_count[i])
+        
+
+if __name__ == "__main__":
+    main()
