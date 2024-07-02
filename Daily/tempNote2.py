@@ -273,9 +273,61 @@ print(3)
 '''
 
 # [ ] 백준 24313 
+'''
 a1,a0 = map(int,input().split(' '))
 C= int(input())
 n = int(input())
 
 print(1 if (a1*n + a0) <= C*n and a1 <= C else 0)
 
+'''
+
+# [ ] Programers 최대공약수 최소 공배수 
+'''
+# 유클리드호제법을 활용한 최대공약수 구하기
+def GCD(a,b):
+    while b != 0:
+        a,b = b, a%b 
+    return a 
+# 최소 공배수 구하기
+def lcm(a,b):
+    return a*b // GCD(a,b)
+
+print(GCD(36,20),lcm(36,20))
+'''
+'''
+word = input()
+n = int(input())
+
+print(word[n-1])
+'''
+'''
+N = int(input())
+
+for i in range(N):
+    word = input()
+    print(f"{word[0]}{word[-1]}")
+'''
+'''
+print(len(input().strip().split(' ')))
+'''
+'''
+import sys
+
+inputData = sys.stdin.read().splitlines()
+
+for i in inputData:
+    print(i)
+'''
+'''
+import sys
+
+input = sys.stdin.read().splitlines()
+T = int(input[0])
+
+for i in range(1,len(input)):
+    n,w = input[i].split(' ')
+    n = int(n)
+    print(''.join([i*n for i in w]))
+
+'''
