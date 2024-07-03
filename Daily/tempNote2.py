@@ -331,3 +331,50 @@ for i in range(1,len(input)):
     print(''.join([i*n for i in w]))
 
 '''
+
+#  [ ] 백준 구간합 구하기4
+# i번째 수부터 j번째 수까지 합 구하는 방법
+# 1. sum(nums[i-1:j]) 해서 하나씩 계산 : 총 시간 복잡도는 O(M * N) -> 시간 초과
+# 2. 누적합 배열을 활용해서 각 인덱스까지의 누적합을 저장하는 배열 생성, 
+# prefix_sum[j]-prefix_sum[i-1] 하여 연산 : O(1) -> 훨씬 효율적임 !
+
+'''
+import sys
+
+input = sys.stdin.read().splitlines()
+
+N,M = map(int,input[0].split(' '))
+nums = list(map(int,input[1].split(' ')))
+
+
+# 누적합 배열 만들기 
+prefix_sum = [0]*(N+1)
+
+# 누적합 구하기 
+for n in range(1,N+1):
+    prefix_sum[n] = prefix_sum[n-1] + nums[n-1]
+
+
+for m in range(2,M+2):
+    i,j = map(int, input[m].split(' '))
+    print(prefix_sum[j]-prefix_sum[i-1])
+
+'''
+
+# [ ] 백준 2559 수열 
+import sys
+
+input = sys.stdin.read().splitlines()
+
+N,K = map(int,input[0].split(' '))
+temp = list(map(int,input[1].split(' ')))
+
+
+# 누적합 배열 만들기 
+prefix_sum = [0]*(N)
+
+# 누적합 구하기 
+for n in range(N):
+    prefix_sum[n] = sum(temp[n:n+K])
+
+print(max(prefix_sum))
