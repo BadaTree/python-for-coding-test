@@ -381,3 +381,29 @@ for n in range(N):
 print(max(prefix_sum))
 
 '''
+
+# [ ] 백준 1157
+
+'''
+from collections import Counter
+
+word = input().lower() # 대소문자를 구분하지 않으므로 소문자로 통일 시켜줌
+
+count_word = dict(Counter(word))
+max_alpha = max(count_word.values())
+
+# 최대 빈도 가지는 알파벳의 수 세기
+max_count = sum([1 for value in count_word.values() if max_alpha == value])
+
+# 최대 빈도 가지는 알파벳의 수가 1개라면 대문자 알파벳 출력, 여러개라면 ? 출력
+
+if max_count > 1:
+    print("?")
+else :
+    for alpha,value in count_word.items():
+        if value == max_alpha:
+            print(alpha.upper())
+            break
+'''
+
+#
