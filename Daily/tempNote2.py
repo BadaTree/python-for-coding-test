@@ -362,6 +362,7 @@ for m in range(2,M+2):
 '''
 
 # [ ] 백준 2559 수열 
+'''
 import sys
 
 input = sys.stdin.read().splitlines()
@@ -378,3 +379,5 @@ for n in range(N):
     prefix_sum[n] = sum(temp[n:n+K])
 
 print(max(prefix_sum))
+
+'''
