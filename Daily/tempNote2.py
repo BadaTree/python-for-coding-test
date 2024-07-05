@@ -406,4 +406,23 @@ else :
             break
 '''
 
-#
+# [ ] 백준 9655
+
+
+# [ ] 백준 10813
+
+N,M = map(int,input().split(' '))
+
+baskets = [i for i in range(N + 1)]
+
+# 공 교환
+for _ in range(M):
+    i, j = map(int, input().split())
+    baskets[i], baskets[j] = baskets[j], baskets[i]
+
+# 결과 출력 (1번 바구니부터 N번 바구니까지)
+print(' '.join(map(str, baskets[1:])))
+    
+
+
+
