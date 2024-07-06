@@ -1,3 +1,4 @@
-# 디폴트 무시된 파일
+# Ignore Mac system files
 /shelf/
 /workspace.xml
+.DS_Store
