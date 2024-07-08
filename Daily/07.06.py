@@ -18,7 +18,7 @@ words = list(set(words))
 
 # 단어 길이-> 사전 순서대로 정렬
 # NOTE: 아래 정렬방식 익히기
-words.sort(key=lambda x: (len(x), x))
+word.sort(key=lambda x : (len(x),x))
 
 # 정렬된 단어 출력
 for word in words:
