@@ -9,17 +9,19 @@ words = []
 # 입력 단어와 단어 길이 차례대로 저장 
 N = int(input[0])
 
-for i in range(1,N+1):
+for i in range(1, N + 1):
     word = input[i]
-    words.append([len(word),word])
-        
+    words.append(word)
 
+# 중복 단어 제거
+words = list(set(words))
 
+# 단어 길이-> 사전 순서대로 정렬
+# NOTE: 아래 정렬방식 익히기
+words.sort(key=lambda x: (len(x), x))
 
-# 1. 단어 길이-> 사전 순서대로 정렬 2. 중복 단어 제거 
-print(sorted(words))
-sorted_words = set([w[1] for w in words])
-for word in sorted_words:
+# 정렬된 단어 출력
+for word in words:
     print(word)
 
 # TODO : 24.07.07 데일리 코딩 문제를 풀어보자
