@@ -159,7 +159,7 @@ result = ''.join(l_stack+ r_stack[::-1])
 
 # 큐, 백준 10845
 # https://www.acmicpc.net/problem/10845
-
+'''
 from collections import deque
 import sys
 
@@ -185,10 +185,40 @@ for i in range(1, N + 1):
         print(queue[0] if queue else -1)
     elif cmd[0] == "back":
         print(queue[-1] if queue else -1)
-
+'''
         
 # 요세푸스, 백준 1158
 # https://www.acmicpc.net/problem/1158
+from collections import deque
+
+N,K = map(int,input().split(' '))
+queue = deque([i for i in range(1,N+1)])
+result = []
+
+while queue:
+    queue.rotate(-(K-1))
+    result.append(queue.popleft())
+print('<'+', '.join(map(str,result))+'>')  
+
+# GPT 보완 
+from collections import deque
+
+# 입력 받기
+N, K = map(int, input().split())
+
+# 1번부터 N번까지 사람들을 큐에 넣기
+queue = deque(range(1, N + 1))
+result = []
+
+# 요세푸스 순열을 생성하는 과정
+while queue:
+    # 큐를 K-1번 회전시켜 K번째 사람을 앞으로 이동
+    queue.rotate(-(K - 1))
+    # 큐에서 K번째 사람을 제거하고 결과에 추가
+    result.append(queue.popleft())
+
+# 결과 출력
+print('<' + ', '.join(map(str, result)) + '>')  
 
 
 # 덱, 백준 108866
