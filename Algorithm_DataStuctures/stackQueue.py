@@ -2,7 +2,7 @@
 
 # 스택, 백준 10828 
 # https://www.acmicpc.net/problem/10828
-'''
+
 import sys
 
 def stack_fun(num_list, command):
@@ -28,11 +28,10 @@ for i in range(1, N + 1):
         result = stack_fun(num_list, command)
         print(result)
 
-'''
 
 # 단어 뒤집기, 백준 9093
 # https://www.acmicpc.net/problem/9093
-'''
+
 import sys
 input = sys.stdin.readlines()
 
@@ -40,10 +39,10 @@ N = int(input[0])
 for i in range(1,N+1):
     words = input[i].strip().split(' ')
     print(' '.join([word[::-1] for word in words]))
-'''
+
 # 괄호, 백준 9012
 # https://www.acmicpc.net/problem/9012
-'''
+
 import sys
 input = sys.stdin.readlines()
 
@@ -64,7 +63,7 @@ for i in range(1,N+1):
                 pslist.pop()
  
     print("YES" if not pslist and isVps else "NO")
-'''
+
 
 # 스택 수열, 백준 1874
 # https://www.acmicpc.net/problem/1874
@@ -79,7 +78,7 @@ for i in range(1,N+1):
 deque의 rotate 사용: deque.rotate를 사용하여 커서를 이동하는 방식은 효율적이지 않습니다. 특히, 많은 수의 커서 이동 명령이 있을 때 비효율적입니다.
 명령어 처리 로직: 명령어 'B'에서 항상 pop을 사용하는 방식은 커서 위치에 관계없이 항상 오른쪽 끝에서 문자를 제거합니다. 이 부분이 잘못되었습니다.
 '''
-'''
+
 import sys
 from collections import deque
 
@@ -132,34 +131,39 @@ for command in commands:
 
 result = "".join(left_stack + right_stack[::-1])
 print(result)
-'''
+
 # 내가 다시 푼 것 
-'''
+
 import sys
 from collections import deque
 
 input = sys.stdin.read().strip().splitlines()
-msg = deque(input[0])
-N = int(input[1])
-l_stack = msg
-r_stack = []
+initial_string = input[0]
+M = int(input[1])
+commands = input[2:]
 
-for i in range(2,N+2):
-    cmd = input[i].split(' ')
-    if cmd[0] == 'L' and l_stack:
-        r_stack.append(l_stack.pop())
-    elif cmd[0] == 'R' and r_stack:
-        l_stack.append(r_stack.pop())
-    elif cmd[0] == 'B' and l_stack:
+l_stack = deque(initial_string)
+r_stack = deque()
+
+for cmd in commands:
+    if cmd == 'L' and l_stack:
+        r_stack.appendleft(l_stack.pop())
+    elif cmd == 'D' and r_stack:
+        l_stack.append(r_stack.popleft())
+    elif cmd == 'B' and l_stack:
         l_stack.pop()
-    elif cmd[0] == 'P':
-        l_stack.append(cmd[1])
-result = ''.join(l_stack+ r_stack[::-1])
-'''
+    elif cmd.startswith('P'):
+        _, char = cmd.split()
+        l_stack.append(char)
+
+result = ''.join(l_stack) + ''.join(r_stack)
+print(result)
+
+
 
 # 큐, 백준 10845
 # https://www.acmicpc.net/problem/10845
-'''
+
 from collections import deque
 import sys
 
@@ -185,11 +189,11 @@ for i in range(1, N + 1):
         print(queue[0] if queue else -1)
     elif cmd[0] == "back":
         print(queue[-1] if queue else -1)
-'''
+
         
 # 요세푸스, 백준 1158
 # https://www.acmicpc.net/problem/1158
-'''
+
 from collections import deque
 
 N,K = map(int,input().split(' '))
@@ -221,7 +225,7 @@ while queue:
 # 결과 출력
 print('<' + ', '.join(map(str, result)) + '>')  
 
-'''
+
 # 덱, 백준 108866
 # https://www.acmicpc.net/problem/10866
 
