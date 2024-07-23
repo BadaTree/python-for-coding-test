@@ -79,7 +79,7 @@ for i in range(1,N+1):
 deque의 rotate 사용: deque.rotate를 사용하여 커서를 이동하는 방식은 효율적이지 않습니다. 특히, 많은 수의 커서 이동 명령이 있을 때 비효율적입니다.
 명령어 처리 로직: 명령어 'B'에서 항상 pop을 사용하는 방식은 커서 위치에 관계없이 항상 오른쪽 끝에서 문자를 제거합니다. 이 부분이 잘못되었습니다.
 '''
-
+'''
 import sys
 from collections import deque
 
@@ -132,12 +132,64 @@ for command in commands:
 
 result = "".join(left_stack + right_stack[::-1])
 print(result)
+'''
+# 내가 다시 푼 것 
+'''
+import sys
+from collections import deque
+
+input = sys.stdin.read().strip().splitlines()
+msg = deque(input[0])
+N = int(input[1])
+l_stack = msg
+r_stack = []
+
+for i in range(2,N+2):
+    cmd = input[i].split(' ')
+    if cmd[0] == 'L' and l_stack:
+        r_stack.append(l_stack.pop())
+    elif cmd[0] == 'R' and r_stack:
+        l_stack.append(r_stack.pop())
+    elif cmd[0] == 'B' and l_stack:
+        l_stack.pop()
+    elif cmd[0] == 'P':
+        l_stack.append(cmd[1])
+result = ''.join(l_stack+ r_stack[::-1])
+'''
 
 # 큐, 백준 10845
 # https://www.acmicpc.net/problem/10845
 
+from collections import deque
+import sys
+
+input = sys.stdin.readlines()
+
+N = int(input[0].strip())
+queue = deque()
+
+for i in range(1, N + 1):
+    cmd = input[i].strip().split()
+    if cmd[0] == "push":
+        queue.append(cmd[1])
+    elif cmd[0] == "pop":
+        if queue:
+            print(queue.popleft())
+        else:
+            print(-1)
+    elif cmd[0] == "size":
+        print(len(queue))
+    elif cmd[0] == "empty":
+        print(1 if not queue else 0)
+    elif cmd[0] == "front":
+        print(queue[0] if queue else -1)
+    elif cmd[0] == "back":
+        print(queue[-1] if queue else -1)
+
+        
 # 요세푸스, 백준 1158
 # https://www.acmicpc.net/problem/1158
+
 
 # 덱, 백준 108866
 # https://www.acmicpc.net/problem/10866
