@@ -27,7 +27,7 @@ for i in range(1,N+1):
 print(scores)
 '''
 # [ ] hash 응용 문제 2. 점수 여러 개 저장
-
+'''
 import sys
 
 scores = {}
@@ -60,6 +60,16 @@ if bada_scores:
     print(average_score)
 else:
     print("No scores available for 'bada'")
-    
+'''
+
 # [ ] hash 응용 문제 3. 문자열 내 문자 빈도 수 
- 
+# 특정 문장을 입력 받아 알파벳의 빈도 수 계산 및 각 알파벳 빈도 수 출력
+
+input_msg = input().strip()
+
+alpha_freqency = {}
+
+for alpha in input_msg:
+    alpha_freqency[alpha]=alpha_freqency.get(alpha,0) + 1
+
+print(alpha_freqency)
