@@ -64,7 +64,7 @@ else:
 
 # [ ] hash 응용 문제 3. 문자열 내 문자 빈도 수 
 # 특정 문장을 입력 받아 알파벳의 빈도 수 계산 및 각 알파벳 빈도 수 출력
-
+'''
 input_msg = input().strip()
 
 alpha_freqency = {}
@@ -73,3 +73,36 @@ for alpha in input_msg:
     alpha_freqency[alpha]=alpha_freqency.get(alpha,0) + 1
 
 print(alpha_freqency)
+'''
+
+# [ ] backjoon ZOAC 4 
+'''
+H,W,N,M = map(int,input().split())
+current_W = 1
+current_H = 1
+countW = 1
+countH = 1 
+
+for i in range(1,W+1):
+    if current_W+N+1 <= W :
+        current_W += N+1
+        countW += 1
+for j in range(1,H+1):
+    if current_H+ M+1 <= H:
+        current_H += M+1  
+        countH += 1  
+
+print(countW*countH)
+
+# 두번 째 방법
+H, W, N, M = map(int, input().split())
+
+# H에서 (N+1) 간격으로 배치 가능한 행의 수 계산
+rows = (H // (N + 1)) + (1 if H % (N + 1) > 0 else 0)
+
+# W에서 (M+1) 간격으로 배치 가능한 열의 수 계산
+columns = (W // (M + 1)) + (1 if W % (M + 1) > 0 else 0)
+
+# 전체 배치 가능한 사람 수는 열과 행의 곱
+print(columns * rows)
+'''
