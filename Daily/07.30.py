@@ -111,31 +111,39 @@ print(columns * rows)
 # https://www.acmicpc.net/problem/17413
 # 괄호 안이냐 밖이냐 체크 -> 안이면 그대로 추가/밖이면 뒤집어 추가 
 # 공백도 안은 그대로 추가 밖은 단어 사이라면 단어 구별로 사용, 밖이라면 그대로 이용
-
 msg = input()
 inside_tag = False
-word =[]
+word = []
 result = []
 
-for i in msg:
-    word.append()
-    if i == ' ' and not inside_tag and not word:
-        result.append(word[:-1:-1])
-        result.append(' ')
-        word = []
-    if i == "<":
+for char in msg:
+    if char == '<':
         if word:
-            result.append(' ')
+            result.extend(word[::-1])
             word = []
         inside_tag = True
-    if i == ">":
+        result.append(char)
+    elif char == '>':
         inside_tag = False
-        result.append(word)
-        word = []
-    
-    
+        result.append(char)
+    elif char == ' ':
+        if inside_tag:
+            result.append(char)
+        else:
+            if word:
+                result.extend(word[::-1])
+                word = []
+            result.append(char)
+    else:
+        if inside_tag:
+            result.append(char)
+        else:
+            word.append(char)
 
+if word:
+    result.extend(word[::-1])
 
+print(''.join(result))
       
 # [ ] 쇠막대기 (백준 10799, 실버 2)
 # https://www.acmicpc.net/problem/10799
