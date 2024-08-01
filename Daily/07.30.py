@@ -106,3 +106,15 @@ columns = (W // (M + 1)) + (1 if W % (M + 1) > 0 else 0)
 # 전체 배치 가능한 사람 수는 열과 행의 곱
 print(columns * rows)
 '''
+
+# [ ] 단어 뒤집기 (백준 17413, 실버 3)
+# https://www.acmicpc.net/problem/17413
+
+# [ ] 쇠막대기 (백준 10799, 실버 2)
+# https://www.acmicpc.net/problem/10799
+
+# [ ] 오들큰수 (백준 17299, 골드 3)
+# https://www.acmicpc.net/problem/17299
+
+# [ ] 오큰수 (백준 17298, 골드 4)
+# https://www.acmicpc.net/problem/17298
