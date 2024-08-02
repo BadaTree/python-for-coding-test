@@ -111,6 +111,7 @@ print(columns * rows)
 # https://www.acmicpc.net/problem/17413
 # 괄호 안이냐 밖이냐 체크 -> 안이면 그대로 추가/밖이면 뒤집어 추가 
 # 공백도 안은 그대로 추가 밖은 단어 사이라면 단어 구별로 사용, 밖이라면 그대로 이용
+
 msg = input()
 inside_tag = False
 word = []
