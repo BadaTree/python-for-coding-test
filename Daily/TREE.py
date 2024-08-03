@@ -2,10 +2,52 @@
 # https://blog.naver.com/zzzxxx3166/223533254579
 
 class Node:
-    def __init__(self, data, left_node, right_node):
-        self.data = data
-        self.left_node = left_node
-        self.right_node = right_node
+    def __init__(self, key):
+        self.val = key
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self, root_key):
+        self.root = Node(root_key)
+
+    def insert_left(self, current_node, new_value):
+        if current_node.left is None:
+            current_node.left = Node(new_value)
+        else:
+            new_node = Node(new_value)
+            new_node.left = current_node.left
+            current_node.left = new_node
+
+    def insert_right(self, current_node, new_value):
+        if current_node.right is None:
+            current_node.right = Node(new_value)
+        else:
+            new_node = Node(new_value)
+            new_node.right = current_node.right
+            current_node.right = new_node
+
+    def get_root(self):
+        return self.root
+
+    def traverse_preorder(self, node):
+        if node:
+            print(node.val, end=' ')
+            self.traverse_preorder(node.left)
+            self.traverse_preorder(node.right)
+
+# Example usage
+tree = BinaryTree(1)
+root = tree.get_root()
+tree.insert_left(root, 2)
+tree.insert_right(root, 3)
+tree.insert_left(root.left, 4)
+tree.insert_right(root.left, 5)
+tree.insert_left(root.right, 6)
+tree.insert_right(root.right, 7)
+
+# Traverse the tree in preorder to verify the structure
+tree.traverse_preorder(tree.get_root())  # Output: 1 2 4 5 3 6 7
         
 # [1]전위 순회(Preorder Traversal)
 def pre_order(node):
