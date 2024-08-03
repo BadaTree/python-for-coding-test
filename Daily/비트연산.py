@@ -87,3 +87,25 @@ power = 32 반환
 이 설명을 통해 비트 연산이 어떻게 동작하는지, 그리고 코드가 어떤 원리로 작동하는지 이해하는 데 도움이 되셨기를 바랍니다.
 
 '''
+
+def next_power_of_two(n):
+    # 이미 2의 거듭제곱인지 확인
+    if (n & (n - 1)) == 0:
+        return n
+    
+    # n보다 큰 가장 가까운 2의 거듭제곱 찾기
+    power = 1
+    while power < n:
+        power <<= 1
+    
+    return power
+
+def solution(arr):
+    arr_len = len(arr)
+    answer_len = 0
+    # 가장 가까운 2의 정수 거듭제곱값 찾기
+    answer_len = next_power_of_two(arr_len)
+    
+    # 배열의 길이가 2의 정수 거듭제곱 값이 되도록 0 추가해주기 
+    arr.extend([0]*(answer_len-arr_len))
+    return arr

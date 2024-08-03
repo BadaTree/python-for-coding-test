@@ -1,4 +1,6 @@
 # [ ] Tree 개념 
+# https://blog.naver.com/zzzxxx3166/223533254579
+
 class Node:
     def __init__(self, data, left_node, right_node):
         self.data = data
@@ -70,3 +72,32 @@ post_order(tree['A'])
 #         if cur_node.right:
 #             q.append(cur_node.right)
 #     return visited
+
+# [ ] 트리 관련 코테 문제
+
+# [1] 트리 순회(백준 1991, 실버 1)
+# https://www.acmicpc.net/problem/1991
+
+# [2] 트리 부모 찾기 (백준 11725, 실버2)
+# https://www.acmicpc.net/problem/11725
+
+# [3] 트리의 지름 (백준 1167, 골드 2)
+# https://www.acmicpc.net/problem/1167
+
+# [4] 트리의 지름 (백준 1967, 골드 4)
+# https://www.acmicpc.net/problem/1967
+
+# [5] 트리(백준 1068, 골드 5)
+# https://www.acmicpc.net/problem/1068
+
+# [6] 이진 검색 트리 (백즌 5639, 골드4)
+# https://www.acmicpc.net/problem/5639
+
+# [7] 상근이의 여행 (백준 9372, 실버4)
+# https://www.acmicpc.net/problem/9372
+
+# [8] 전화번호 목록 (백준 5051, 골드4)
+# https://www.acmicpc.net/problem/5052
+
+# [9] 트리의 순회 (백준 2263, 골드 1)
+# https://www.acmicpc.net/problem/2263
